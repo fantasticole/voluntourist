@@ -13,11 +13,11 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="footer" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'voluntourist' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'voluntourist' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'voluntourist' ) ); ?>"><?php printf( esc_html__( 'Powered by %s', 'voluntourist' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'voluntourist' ), 'voluntourist', '<a href="http://underscores.me/" rel="designer">Cole Murphy</a>' ); ?>
+			<?php printf( esc_html__( '© 2015 %2$s.', 'voluntourist' ), 'voluntourist', '<a href="http://fantasticole.github.io/" rel="designer" target="_blank">fantasticole</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
