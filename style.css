@@ -356,8 +356,8 @@ big {
 	border: 5px double #667e98;
 }
 .site-description{
-	z-index: 100;
 	position: absolute;
+	top: 53vw;
 }
 
 /*--------------------------------------------------------------
@@ -874,8 +874,7 @@ a:active {
 	margin-top: 40px;
 	padding: 0 15px;
 	width: 100vw;
-	height: 56.25vw;
-	background-color: pink;
+	height: 68vw;
 }
 
 	/*Image & Video Carousel*/
@@ -892,6 +891,46 @@ a:active {
 		padding: 0;
 	}
 
+	/* Directional icons */
+	.carousel i{
+	    position: absolute;
+	    top: 27vw;
+	    color: #fff;
+	    height: 2.25vw;
+	}
+
+		.carousel i:hover{
+			color: pink;
+			cursor: pointer;
+		}
+		.carousel .left{
+			left: 10px;
+		}
+		.carousel .right{
+			right: 10px;
+		}
+
+	/* Directional Dots */
+	.slider-dots{
+		position: absolute;
+		top: 56.25vw;
+	    list-style: none;
+	    padding: 0;
+	    width: 28.6vw;
+	    margin-left: 35.7vw;
+	}
+		.slider-dots li{
+		    display: inline;
+		    font-size: 8vh;
+		    margin: 5px;
+		    color: #667e98;
+		}
+		.slider-dots .active-dot{
+			color: #ccc;
+			-webkit-text-fill-color: #fff;
+			-webkit-text-stroke: 2px #667e98;
+		}
+
 	.visuals li{
 		display: none;
 	}
@@ -904,7 +943,7 @@ a:active {
 	}
 
 #content{
-	padding: 15px;
+	padding: 0 15px;
 }
 /*--------------------------------------------------------------
 ## Posts and pages

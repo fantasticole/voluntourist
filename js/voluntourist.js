@@ -1,9 +1,40 @@
 jQuery(document).ready(function($) {
     // Inside of this function, $() will work as an alias for jQuery()
     // and other libraries also using $ will not be accessible under this shortcut
-	// $('.menu-toggle').click(function(){
- //        console.log($(this));
- //    });
+
+    function changeSlide(direction){
+        var currentSlide = $('.current');
+        var currentDot = $('.active-dot');
+        if (direction === 'right'){
+            var nextSlide = $('.current').next('li');
+            if (nextSlide.length == 0){
+                nextSlide = $('.visuals li').first();
+            }
+            var nextDot = $('.active-dot').next();
+            if (nextDot.length == 0){
+                nextDot = $('.slider-dots li').first();
+            }
+        }
+        else {
+            var nextSlide = $('.current').prev('li');
+            if (nextSlide.length == 0){
+                nextSlide = $('.visuals li').last();
+            }
+            var nextDot = $('.active-dot').prev();
+            if (nextDot.length == 0){
+                nextDot = $('.slider-dots li').last();
+            }
+        }
+        currentDot.removeClass('active-dot');
+        nextDot.addClass('active-dot');
+        currentSlide.toggle().removeClass('current');
+        nextSlide.toggle().addClass('current');
+    }
+
+    $('.right').click(function(event){changeSlide('right')});
+    $('.left').click(function(){changeSlide('left')});
+    // setInterval(function(event){changeSlide('right')}, 4000);
+
 
 	// //Set font-size based on container size.
 	// $.fn.textfill = function() {
