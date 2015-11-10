@@ -596,6 +596,7 @@ a:active {
 }
 
 .main-navigation ul ul a {
+	font-size: 19px;
 }
 
 .main-navigation ul ul li {
@@ -616,10 +617,6 @@ a:active {
 .current_page_item,
 .current_page_parent {
 	background-color: #fff;
-}
-
-.current_page_parent {
-	margin-bottom: 100px;
 }
 
 .main-navigation li:hover > a,

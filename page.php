@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<!-- Page Name -->
+				<!-- Page Name & Content-->
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 				<?php
