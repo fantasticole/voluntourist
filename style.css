@@ -52,6 +52,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /* #EF767A - salmon */
 /* #A3D9FF - carolina blue */
 /* #81F4E1 - turquoise */
+/* #234F7E - deep blue */
 
 
 /*--------------------------------------------------------------
@@ -559,7 +560,7 @@ a:active {
 	width: 100%;
 }
 
-.main-navigation li {
+.main-navigation .nav-menu > li {
 	position: relative;
 	text-align: center;
 	flex: 1;
@@ -574,10 +575,8 @@ a:active {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
+	background-color: #fff;
+	border-bottom: 1px solid white;
 }
 
 .main-navigation ul ul ul {
@@ -586,20 +585,31 @@ a:active {
 }
 
 .main-navigation ul ul a {
-	width: 200px;
 }
 
 .main-navigation ul ul li {
+	flex: 1;
+	background-color: rgba(102, 126, 152, 0.6);
+}
 
+.main-navigation ul ul li:hover, .main-navigation ul ul .current_page_item {
+	background-color: rgba(102, 126, 152, 0.2);
+}
+
+.main-navigation ul ul li:hover a {
 }
 
 .main-navigation li:hover,
-.main-navigation li.focus {
+.main-navigation li.focus, .current_page_item, .current_page_parent {
 	background-color: #fff;
 }
 
+.current_page_parent {
+	margin-bottom: 100px;
+}
+
 .main-navigation li:hover > a,
-.main-navigation li.focus > a {
+.main-navigation li.focus > a, .current_page_item > a, .current_page_parent > a {
 	color: rgba(102, 126, 152, 0.9);
 }
 
@@ -631,7 +641,7 @@ a:active {
 .main-navigation.toggled ul {
 	display: block;
 }
-.main-navigation.toggled ul {
+.main-navigation.toggled .nav-menu {
 	margin-top: 40px;
 }
 
@@ -723,6 +733,21 @@ a:active {
 	.main-navigation ul {
 		display: flex;
 		flex-direction: row;
+	}
+	.nav-menu{
+		background-color: transparent;
+	}
+	.current_page_parent {
+		margin-bottom: 0;
+	}
+	.main-navigation ul ul {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		margin-top: 7px;
+		width: 400px;
+		border: none;
+	}
+	.main-navigation ul ul li:hover a{
+		color:rgba(102, 126, 152, 0.9);
 	}
 }
 
