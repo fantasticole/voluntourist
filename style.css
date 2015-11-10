@@ -353,23 +353,6 @@ big {
 	font-size: 125%;
 }
 
-.site-title{
-	text-align: center;
-	font-size: 30px;
-	position: relative;
-	padding-top: 20px;
-}
-.site-title a{
-	font-family: 'Stardos Stencil', cursive;
-	text-decoration: none;
-	padding: 3px 5px;
-	border: 5px double #667e98;
-}
-.site-description{
-	position: absolute;
-	top: 53vw;
-}
-
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -548,7 +531,7 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-/* #masthead > nav/.main-navigation & .site-branding */
+/* #masthead > nav/.main-navigation */
 
 #masthead nav{
 	z-index:1000;
@@ -882,82 +865,42 @@ a:active {
 --------------------------------------------------------------*/
 .site-branding{
 	margin-top: 40px;
-	padding: 0 15px;
 	width: 100vw;
-	height: 68vw;
+	height: calc(56.25vw + );
 }
+	.site-title{
+		text-align: center;
+		font-size: 30px;
+		position: relative;
+		padding-top: 20px;
+		margin: 0;
+	}
+	.site-title a{
+		font-family: 'Stardos Stencil', cursive;
+		text-decoration: none;
+		padding: 3px 5px;
+		border: 5px double #667e98;
+	}
+	.site-description{
+		text-align: center;
+	}
 
 	/*Image & Video Carousel*/
-	.carousel{
-		position: absolute;
-		left: 0;
-		height: 56.25vw;
-	}
-	.carousel, .visuals, .visuals li *{
-		width: 100vw;
-		height: 100%;
-		overflow: hidden;
-		margin: 0;
-		padding: 0;
-	}
-
-	/* Directional icons */
-	.carousel i{
-	    position: absolute;
-	    top: 27vw;
-	    color: #fff;
-	    height: 2.25vw;
-	}
-
-		.carousel i:hover{
-			color: pink;
-			cursor: pointer;
-		}
-		.carousel .left{
-			left: 10px;
-		}
-		.carousel .right{
-			right: 10px;
-		}
-
-	/* Directional Dots */
-	.slider-dots{
-		position: absolute;
-		top: 56.25vw;
-	    list-style: none;
-	    padding: 0;
-	    width: 28.6vw;
-	    margin-left: 35.7vw;
-	}
-		.slider-dots li{
-		    display: inline;
-		    font-size: 8vh;
-		    margin: 5px;
-		    color: #667e98;
-		}
-		.slider-dots .active-dot{
-			color: #ccc;
-			-webkit-text-fill-color: #fff;
-			-webkit-text-stroke: 2px #667e98;
-		}
-
-	.visuals li{
-		display: none;
-	}
-
-	.visuals .current{
-		display: block;
+	.ls-video-layer iframe{
 		width: 100vw;
 		height: 56.25vw;
-		top: 40px;
 	}
 
-#content{
-	padding: 0 15px;
-}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+#main article{
+	margin-top: 40px;
+}
+#main #post-6{
+	margin-top: 0;
+}
 .sticky {
 	display: block;
 }
