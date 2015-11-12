@@ -103,11 +103,13 @@ template {
 
 a {
 	background-color: transparent;
+	text-decoration: none;
 }
 
 a:active,
 a:hover {
 	outline: 0;
+	text-decoration: none;
 }
 
 abbr[title] {
@@ -508,6 +510,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	color: royalblue;
+	/*font-weight: 300;*/
 }
 
 a:visited {
@@ -764,6 +767,13 @@ a:active {
 	.main-navigation ul ul li:hover a{
 		color:rgba(102, 126, 152, 0.9);
 	}
+	/* Volunteer Child Page Nav Links */
+	.page-item-12 .children{
+		height: 28px;
+	}
+	.site-content #review{
+		margin-top: 75px;
+	}
 }
 
 .site-main .comment-navigation,
@@ -903,6 +913,10 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+#main{
+	padding: 10px;
+}
+
 .site-branding{
 	margin-top: 40px;
 	width: 100vw;
@@ -935,14 +949,30 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.site-main article{
-	margin-top: 50px;
+.site-main article,
+.search .site-main {
+	margin-top: 40px;
 }
 .child article{
 	margin-top: 80px;
 }
+/* Home Page Content */
 #main #post-6{
 	margin-top: 0;
+}
+/* Review Submission Link */
+#review{
+	margin-top: 45px;
+	background-color: pink;
+	text-align: center;
+}
+/* Get rid of white space below submit link */
+.page-id-149 .child article:first-child{
+	margin-top: 0;
+}
+.type-post .entry-content iframe{
+	width:100vw;
+	height: 60vw;
 }
 .sticky {
 	display: block;
@@ -971,6 +1001,22 @@ a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.edit-link,
+.comments-link {
+	display: block;
+	margin-top: 15px;
+}
+
+#post-12 br{
+	display: none;
+}
+
+#main .flag{
+	display: inline-block;
+	height: 40vw;
+	width: 40vw;
 }
 
 /*--------------------------------------------------------------
@@ -1033,10 +1079,17 @@ object {
 	max-width: 100%;
 }
 
-.wp-caption img[class*="wp-image-"] {
+.wp-caption img[class*="wp-image-"],
+.entry-content img {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	width:100vw;
+	margin: 0;
+	max-width: 600px;
+}
+
+.entry-content figure {
+	margin: 0;
+	width: 100vw !important;
 }
 
 .wp-caption .wp-caption-text {
@@ -1045,6 +1098,8 @@ object {
 
 .wp-caption-text {
 	text-align: center;
+	font-size: 12px;
+	font-style: italic;
 }
 
 /*--------------------------------------------------------------
