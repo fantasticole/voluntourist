@@ -51,6 +51,16 @@ jQuery(document).ready(function($) {
         'margin-right' : '30px'
     });
 
+    $('.single-post .itemBody p img:odd').css({
+        'float': 'right',
+        'margin-left' : '30px'
+    });
+    $('.single-post .itemBody p img:even').css({
+        'float': 'left',
+        'margin-right' : '30px',
+        'margin-left' : '0'
+    });
+
 	// //Set font-size based on container size.
 	// $.fn.textfill = function() {
 	// 	var num = 50;
