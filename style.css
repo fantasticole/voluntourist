@@ -656,7 +656,8 @@ a:active {
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul,
-.main-navigation.toggled .current_page_parent .children {
+.main-navigation.toggled .current_page_parent .children,
+.main-navigation.toggled .current_page_item .children {
 	display: block;
 }
 .main-navigation.toggled .page_item_has_children ul {

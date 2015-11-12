@@ -30,10 +30,15 @@ jQuery(document).ready(function($) {
     }
 
     function expandParent(){
-        if ($(window).width() < 601 & $('.current_page_parent').length > 0){
+        if ($(window).width() < 601 && $('.current_page_parent').length > 0){
             var childLIs = $('.current_page_parent .children')[0].children;
             var margin = 28*childLIs.length;
             $(".current_page_parent").css("margin-bottom", margin);
+        }
+        else if ($(window).width() < 601 && $('.current_page_item').length > 0){
+            var childLIs = $('.current_page_item .children')[0].children;
+            var margin = 28*childLIs.length;
+            $(".current_page_item").css("margin-bottom", margin);
         }
     };
 
