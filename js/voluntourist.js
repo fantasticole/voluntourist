@@ -2,8 +2,8 @@ jQuery(document).ready(function($) {
     // Inside of this function, $() will work as an alias for jQuery()
     // and other libraries also using $ will not be accessible under this shortcut
 
-    if ($(window).width() < 601){
-        var childLIs = $('.current_page_parent').find('.children')[0].children;
+    if ($(window).width() < 601 & $('.current_page_parent').length > 0){
+        var childLIs = $('.current_page_parent .children')[0].children;
         var margin = 28*childLIs.length;
         $(".current_page_parent").css("margin-bottom", margin);
     }

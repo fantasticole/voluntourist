@@ -28,7 +28,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => '2') ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
