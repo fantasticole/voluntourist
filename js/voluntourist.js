@@ -15,16 +15,12 @@ jQuery(document).ready(function($) {
     if ($('.single-post').length > 0){
         // Get posts classes.
         var classes = $('article')[0].className.split(' ');
-        for (var name in classes){
-            if (classes[name].indexOf('category-') !== -1){
-                // Get posts categories from classes.
-                var category = classes[name].slice(classes[name].indexOf('-')+1);
+        for (var category in classes){
                 // If the class is a parent page...
-                if (parents[category]){
-                    // Show parent's sub-menu.
-                    $('.' + parents[category]).addClass('current_page_parent');
-                    // expandParent();
-                }
+            if (parents[classes[category]]){
+                // Show parent's sub-menu.
+                $('.' + parents[classes[category]]).addClass('current_page_parent');
+                // expandParent();
             }
         }
     }

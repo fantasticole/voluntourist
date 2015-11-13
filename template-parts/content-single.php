@@ -9,10 +9,9 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="post<?php the_category_unlinked(' '); ?>">
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
 		<div class="entry-meta">
 			<?php voluntourist_posted_on(); ?>
 		</div><!-- .entry-meta -->
