@@ -93,6 +93,22 @@ function voluntourist_content_width() {
 add_action( 'after_setup_theme', 'voluntourist_content_width', 0 );
 
 /**
+ * Keep (more...) link from jumping to middle of page.
+ *
+ */
+function remove_more_jump_link($link) { 
+	$offset = strpos($link, '#more-');
+	if ($offset) {
+		$end = strpos($link, '"',$offset);
+	}
+	if ($end) {
+		$link = substr_replace($link, '', $offset, $end-$offset);
+	}
+	return $link;
+}
+add_filter('the_content_more_link', 'remove_more_jump_link');
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -134,12 +150,12 @@ add_action( 'wp_enqueue_scripts', 'voluntourist_scripts' );
 
 function the_category_unlinked($separator = ' ') {
     $categories = (array) get_the_category();
-    
+
     $thelist = '';
     foreach($categories as $category) {    // concate
         $thelist .= $separator . $category->category_nicename;
     }
-    
+
     echo $thelist;
 }
 
