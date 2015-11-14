@@ -106,6 +106,7 @@ template {
 a {
 	background-color: transparent;
 	text-decoration: none;
+	font-style: bold;
 }
 
 a:active,
@@ -287,7 +288,9 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -423,7 +426,7 @@ dd {
 
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	max-width: 100vw; /* Adhere to container width. */
 }
 
 table {
@@ -512,7 +515,6 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	color: royalblue;
-	/*font-weight: 300;*/
 }
 
 a:visited {
@@ -551,6 +553,7 @@ a:active {
 	background-color: rgba(102, 126, 152, 0.9);
 	position: fixed;
 	top: 0;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .nav-menu{
@@ -563,6 +566,7 @@ a:active {
 	margin: 0;
 	padding-left: 0;
 	width: 100%;
+	text-transform: uppercase;
 }
 
 .main-navigation .nav-menu > li {
@@ -777,8 +781,21 @@ a:active {
 	.site-content #review{
 		margin-top: 75px;
 	}
-	.single .entry-content figure{
-		margin-bottom: 20px;
+	.single .site-main article,
+	.child article{
+		margin-top: 40px;
+	}
+	.main-navigation ul ul a {
+		padding-bottom: 2px;
+	}
+	#main .flag,
+	#post-12 figure {
+		height: 25vw;
+		width: 25vw !important;
+	}
+	#post-12 figure:hover figcaption{
+		width: 25vw;
+		margin-top:8vw;
 	}
 }
 
@@ -813,6 +830,8 @@ a:active {
 	position: absolute;
     bottom: 0;
     width: 100vw;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2),
+                0 -3px 3px rgba(0, 0, 0, 0.2);
 }
 	/* make footer stick to bottom */
 	#page{
@@ -928,10 +947,12 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-#main{
+body:not(.page-id-6) #main{
+	margin-top: 50px;
+}
+body:not(.page-id-12) #main{
 	padding: 10px;
 }
-
 .site-branding{
 	margin-top: 40px;
 	width: 100vw;
@@ -964,14 +985,6 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.site-main article,
-.search .site-main {
-	margin-top: 40px;
-}
-.single .site-main article,
-.child article{
-	margin-top: 80px;
-}
 /* Home Page Content */
 #main #post-6{
 	margin-top: 0;
@@ -1009,22 +1022,42 @@ a:active {
 }
 
 .page-content,
-.entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+}
+article .entry-title {
+	font-family: 'Droid Serif', serif;
+}
+.page .entry-title,
+.single .entry-title {
+	text-align: center;
+}
+.single article .entry-title:after {
+	content:"";
+	background: rgba(0,0,0,0.2);
+	display: block;
+	height: 1px;
+	width: 80vw;
+	margin: 0 auto;
+}
+
+.single .entry-content{
+    margin-bottom: 20px;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
-.edit-link,
 .comments-link {
 	display: block;
 	margin-top: 15px;
 }
-
+.edit-link {
+	display: block;
+	margin: 15px 0
+}
+/* Volunteer Page */
 #post-12 br{
 	display: none;
 }
@@ -1038,24 +1071,44 @@ a:active {
 	/*background-color: orange;*/
 }
 
-p > img{
-	margin-left: -10px;
-}
-
-/* Keep Captions Below Images */
-.entry-content figure{
-	display: flex;
-	flex-direction: column;
-	max-width: 600px;
-	margin-bottom: 20px;
-	margin-left: -10px;
-}
-
 /* Flag Images */
-#main .flag{
-	display: inline-block;
-	height: 40vw;
-	width: 40vw;
+.flag,
+.page-id-12 figure {
+	display: block;
+	height: 33.3vw;
+	width: 33.3vw !important;
+	float: left;
+	margin: 0;
+}
+.page-id-12 figcaption{
+	display: none;
+}
+
+#post-12 figure:hover .flag{
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+    -webkit-transition: -webkit-transform 0.2s ease;
+    -moz-transition: -moz-transform 0.2s ease;
+    -ms-transition: -ms-transform 0.2s ease;
+    -o-transition: -o-transform 0.2s ease;
+    transition: transform 0.2s ease;
+}
+
+.page-id-12 figure:hover figcaption{
+	display: block;
+	text-align: center;
+	margin: 0;
+	width: 33.3vw;
+	margin-top:12vw;
+	color: #fff;
+	text-shadow: 2px 2px 0px #667E98;
+	font-size: 5vw;
+	position: absolute;
+	font-family: 'Stardos Stencil', cursive;
+	font-style: normal;
 }
 
 /*--------------------------------------------------------------
@@ -1118,15 +1171,21 @@ object {
 	max-width: 100%;
 }
 
-.wp-caption img[class*="wp-image-"],
-.entry-content img {
+.wp-caption img[class*="wp-image-"] {
 	display: block;
 	width:100vw;
 	max-width: 600px;
 }
 
-.entry-content figure {
+.page .post .entry-content img,
+.single .entry-content img {
 	width: 100vw !important;
+	margin: 0;
+	margin-left: -10px;
+}
+body:not(.page-id-12) .entry-content figure {
+	width: 100vw !important;
+	margin: 0;
 }
 
 .wp-caption .wp-caption-text {

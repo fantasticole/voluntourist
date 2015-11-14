@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Raleway:400,500,600,700,900,800" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Oswald:400,300|Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 <?php wp_head(); ?>
 </head>
