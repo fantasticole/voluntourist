@@ -507,6 +507,22 @@ textarea {
 	width: 100%;
 }
 
+#post-18 form{
+	width: 80vw;
+	margin: auto;
+}
+#main .contact-form input[type=email],
+#main .contact-form input[type=text],
+#main .contact-form textarea {
+	width: 80vw;
+	border-radius: 0;
+	margin-bottom: 15px;
+	min-width: 300px;
+}
+#main .contact-form label span{
+	font-weight: 300;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -788,7 +804,7 @@ a:active {
 	.main-navigation ul ul a {
 		padding-bottom: 2px;
 	}
-	#main .flag,
+	.page-id-12 #main figure img,
 	#post-12 figure {
 		height: 25vw;
 		width: 25vw !important;
@@ -947,7 +963,7 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-body:not(.page-id-6) #main{
+body:not(.page-id-6):not(.page-id-149) #main{
 	margin-top: 50px;
 }
 body:not(.page-id-12) #main{
@@ -992,13 +1008,16 @@ body:not(.page-id-12) #main{
 /* Review Submission Link */
 #review{
 	margin-top: 45px;
+	margin-bottom: 20px;
 	background-color: pink;
 	text-align: center;
 }
-/* Get rid of white space below submit link */
-.page-id-149 .child article:first-child{
-	margin-top: 0;
+
+#pageText{
+	width: 80vw;
+	margin: auto;
 }
+/* iframe styling (e.g. videos) */
 .type-post .entry-content iframe{
 	width:100vw;
 	height: 60vw;
@@ -1040,7 +1059,9 @@ article .entry-title {
 	width: 80vw;
 	margin: 0 auto;
 }
-
+.single article .entry-meta {
+	margin-bottom: 10px;
+}
 .single .entry-content{
     margin-bottom: 20px;
 }
@@ -1057,7 +1078,7 @@ article .entry-title {
 	display: block;
 	margin: 15px 0
 }
-/* Volunteer Page */
+/* Volunteer Page 
 #post-12 br{
 	display: none;
 }
@@ -1072,7 +1093,10 @@ article .entry-title {
 }
 
 /* Flag Images */
-.flag,
+.page-id-12 .entry-content{
+	width:100vw;
+}
+.page-id-12 figure img,
 .page-id-12 figure {
 	display: block;
 	height: 33.3vw;
@@ -1084,7 +1108,7 @@ article .entry-title {
 	display: none;
 }
 
-#post-12 figure:hover .flag{
+#post-12 figure:hover img{
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	-ms-filter: grayscale(100%);
