@@ -17,14 +17,29 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
 
-			<!-- Only show posts in Travel & Safety Category -->
+			<!-- Only show posts in Media Sub-Categories -->
 			<?php
-				query_posts( array ( 'category_name' => 'articles', 'posts_per_page' => -1 ) );
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$args = array(
+					'category_name' => 'celebrities-give-back, get-inspired, news, special-features',
+					'posts_per_page' => 4,
+					'paged' => $paged
+				);
+				query_posts( $args );
 				while ( have_posts() ) : the_post();
 			?>
 
 				<!-- Page Name -->
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
+				<!-- Pagination Links -->
+				<?php
+					the_posts_pagination( array(
+						'mid_size'  => 2,
+						'prev_text' => __( 'Back', 'textdomain' ),
+						'next_text' => __( 'Onward', 'textdomain' ),
+					) );
+				?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
