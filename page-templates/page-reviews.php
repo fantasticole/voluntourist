@@ -15,10 +15,19 @@
 get_header(); ?>
 
 	<div id="review">
-		<a href="./page_id=161">SUBMIT A REVIEW</a>
+		<a href="./submit-a-review/">SUBMIT A REVIEW</a>
 	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
+			<!-- Display Page Content -->
+			<div id="pageText">
+				<?php
+					$post_id = get_the_ID();
+					$post = get_post( $post_id, ARRAY_A );
+					$content_home = $post['post_content'];
+					echo $content_home;
+				?>
+			</div>
 
 			<!-- Only show posts in Reviews Category -->
 			<?php
