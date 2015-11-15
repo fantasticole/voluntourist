@@ -16,13 +16,14 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
+			<div id="list">
 
 			<!-- Only show posts in Media Sub-Categories -->
 			<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$args = array(
 					'category_name' => 'celebrities-give-back, get-inspired, news, special-features',
-					'posts_per_page' => 5,
+					'posts_per_page' => 6,
 					'paged' => $paged
 				);
 				query_posts( $args );
@@ -40,13 +41,14 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // End of the loop. ?>
+			</div>
 
 			<!-- Pagination Links -->
 			<?php
 				the_posts_pagination( array(
 					'mid_size'  => 2,
-					'prev_text' => __( 'Back', 'textdomain' ),
-					'next_text' => __( 'Onward', 'textdomain' ),
+					'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'textdomain' ),
+					'next_text' => __( '<i class="fa fa-angle-right"></i>', 'textdomain' ),
 				) );
 			?>
 

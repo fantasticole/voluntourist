@@ -16,10 +16,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
+			<div id="list">
 
 			<!-- Only show posts in Must See Category -->
 			<?php
-				query_posts( array ( 'category_name' => 'must-see', 'posts_per_page' => 5 ) );
+				query_posts( array ( 'category_name' => 'must-see', 'posts_per_page' => 6 ) );
 				while ( have_posts() ) : the_post();
 			?>
 
@@ -34,13 +35,14 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // End of the loop. ?>
+			</div>
 
 			<!-- Pagination Links -->
 			<?php
 				the_posts_pagination( array(
 					'mid_size'  => 2,
-					'prev_text' => __( 'Back', 'textdomain' ),
-					'next_text' => __( 'Onward', 'textdomain' ),
+					'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'textdomain' ),
+					'next_text' => __( '<i class="fa fa-angle-right"></i>', 'textdomain' ),
 				) );
 			?>
 
