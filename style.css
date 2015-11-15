@@ -518,6 +518,7 @@ textarea {
 	border-radius: 0;
 	margin-bottom: 15px;
 	min-width: 300px;
+	max-width: 100%;
 }
 #main .contact-form label span{
 	font-weight: 300;
@@ -963,7 +964,7 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-body:not(.page-id-6):not(.page-id-149) #main{
+body:not(.page-id-149) #main{
 	margin-top: 50px;
 }
 body:not(.page-id-12) #main{
@@ -997,6 +998,22 @@ body:not(.page-id-12) #main{
 		height: 56.25vw;
 	}
 
+.entry-content{
+	padding-left: calc(10vw - 10px);
+	padding-right: calc(10vw - 10px);
+}
+
+#main .entry-content figure,
+#main .entry-content img {
+	width: 100vw;
+	margin-left: calc(20px - 10vw);
+}
+#main .entry-content p > img,
+#post-27 .entry-content img {
+	width: 100vw;
+	margin-left: -10vw;
+	float: none;
+}
 
 /*--------------------------------------------------------------
 ## Posts and pages
