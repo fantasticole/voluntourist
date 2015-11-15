@@ -22,7 +22,7 @@ get_header(); ?>
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$args = array(
 					'category_name' => 'celebrities-give-back, get-inspired, news, special-features',
-					'posts_per_page' => 4,
+					'posts_per_page' => 5,
 					'paged' => $paged
 				);
 				query_posts( $args );
@@ -32,15 +32,6 @@ get_header(); ?>
 				<!-- Page Name -->
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-				<!-- Pagination Links -->
-				<?php
-					the_posts_pagination( array(
-						'mid_size'  => 2,
-						'prev_text' => __( 'Back', 'textdomain' ),
-						'next_text' => __( 'Onward', 'textdomain' ),
-					) );
-				?>
-
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
@@ -49,6 +40,15 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // End of the loop. ?>
+
+			<!-- Pagination Links -->
+			<?php
+				the_posts_pagination( array(
+					'mid_size'  => 2,
+					'prev_text' => __( 'Back', 'textdomain' ),
+					'next_text' => __( 'Onward', 'textdomain' ),
+				) );
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
