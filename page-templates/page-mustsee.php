@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<!-- Only show posts in Must See Category -->
 			<?php
-				query_posts( array ( 'category_name' => 'must-see', 'posts_per_page' => -1 ) );
+				query_posts( array ( 'category_name' => 'must-see', 'posts_per_page' => 5 ) );
 				while ( have_posts() ) : the_post();
 			?>
 
@@ -34,6 +34,15 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // End of the loop. ?>
+
+			<!-- Pagination Links -->
+			<?php
+				the_posts_pagination( array(
+					'mid_size'  => 2,
+					'prev_text' => __( 'Back', 'textdomain' ),
+					'next_text' => __( 'Onward', 'textdomain' ),
+				) );
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
