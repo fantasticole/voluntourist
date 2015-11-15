@@ -1010,12 +1010,12 @@ body:not(.page-id-12) #main{
 		height: 56.25vw;
 	}
 
-.entry-content{
+body:not(.page-id-12) .entry-content{
 	padding-left: calc(10vw - 10px);
 	padding-right: calc(10vw - 10px);
 }
 
-#main .entry-content img {
+body:not(.page-id-12) #main .entry-content img {
 	width: 100vw;
 	margin-left: -10vw;
 }
