@@ -1003,10 +1003,9 @@ body:not(.page-id-12) #main{
 	padding-right: calc(10vw - 10px);
 }
 
-#main .entry-content figure,
 #main .entry-content img {
 	width: 100vw;
-	margin-left: calc(20px - 10vw);
+	margin-left: -10vw;
 }
 #main .entry-content p > img,
 #post-27 .entry-content img {
