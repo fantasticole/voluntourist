@@ -826,6 +826,21 @@ a:active {
 		float: right;
 		margin-left: 1.5em;
 	}
+	/* Format Posts in List */
+	#list article{
+		width: 45vw;
+		vertical-align: top;
+	}
+	#list article .entry-content img{
+		width: 45vw !important;
+		padding-left: 10px;
+		box-sizing: content-box;
+	}
+	#list article {
+		border: 1px dashed black;
+		box-sizing: content-box;
+		display: inline-block;
+	}
 }
 
 .site-main .comment-navigation,
@@ -855,7 +870,7 @@ a:active {
 	background-color: rgba(102, 126, 152, 0.9);
 	color: #fff;
 	text-align: center;
-	height: 30px;
+	height: 40px;
 	position: absolute;
     bottom: 0;
     width: 100vw;
@@ -866,13 +881,27 @@ a:active {
 	#page{
 		min-height: 100vh;
 		position: relative;
-		padding-bottom: 30px;
+		padding-bottom: 40px;
 	}
-
-.site-info{
-	font-size: 16px;
-	padding-top: 5px;
-}
+	/* Footer Content */
+	#footer a{
+		max-height: 40px;
+	}
+	#footer .social{
+		padding-top: 5px;
+		width: 50vw;
+		float: left;
+	}
+	#footer .social i{
+		font-size: 30px;
+		margin-left: 10px;
+	}
+	#footer .copyright{
+		font-size: 20px;
+		padding-top: 5px;
+		width: 50vw;
+		float: right;
+	}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1050,6 +1079,10 @@ body:not(.page-id-12) #main .entry-content img {
 	width:100vw;
 	height: 60vw;
 }
+/* Lists of Articles*/
+#list{
+	width: 100%;
+}
 .sticky {
 	display: block;
 }
@@ -1115,11 +1148,6 @@ article .entry-title {
 	font-size: 26px;
 }
 
-/* Format Posts in List */
-.page .post{
-	/*background-color: orange;*/
-}
-
 /* Flag Images */
 .page-id-12 .entry-content{
 	width:100vw;
@@ -1131,6 +1159,7 @@ article .entry-title {
 	width: 33.3vw !important;
 	float: left;
 	margin: 0;
+	overflow: hidden;
 }
 .page-id-12 figcaption{
 	display: none;
@@ -1142,11 +1171,15 @@ article .entry-title {
 	-ms-filter: grayscale(100%);
 	-o-filter: grayscale(100%);
 	filter: grayscale(100%);
-    -webkit-transition: -webkit-transform 0.2s ease;
-    -moz-transition: -moz-transform 0.2s ease;
-    -ms-transition: -ms-transform 0.2s ease;
-    -o-transition: -o-transform 0.2s ease;
-    transition: transform 0.2s ease;
+	webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .page-id-12 figure:hover figcaption{
