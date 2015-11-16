@@ -866,7 +866,7 @@ a:active {
 	#list article .articleTitle a:hover {
 		color: #fff;
 	}
-	#list article .entry-title{
+	#list article .articleTitle .entry-title{
 		margin: auto;
 		width: 80%;
 		margin-top: 20px;
@@ -877,6 +877,9 @@ a:active {
 	    margin-left: calc(50% - 17px);
 	    background-color: orange;
 	    padding: 3px 5px;
+	}
+	#main #list article .edit-link{
+		position: relative;
 	}
 	#list article .entry-content .itemIntroText p,
 	#list article .edit-link {
@@ -1149,6 +1152,18 @@ body:not(.page-id-12) #main .entry-content img {
 	width: 80vw;
 	margin: 0 auto;
 }
+#list article .entry-content{
+	padding-bottom: 20px;
+	position: relative;
+}
+#list article .entry-title{
+	font-size: 5vw;
+}
+#list article .edit-link{
+	position: absolute;
+	bottom: 0;
+}
+
 .sticky {
 	display: block;
 }
