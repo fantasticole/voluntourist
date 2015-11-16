@@ -17,6 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Oswald:400,300|Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://i0.wp.com/www.iamthevoluntourist.com/wp-content/uploads/2015/11/icon.png">
 
 <?php wp_head(); ?>
 </head>
