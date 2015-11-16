@@ -12,9 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
-		<a href="<?php echo get_permalink(); ?>">
-			<div class="articleTitle">
+		<div class="articleTitle">
+			<a href="<?php echo get_permalink(); ?>">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</a>
 			<?php
 				edit_post_link(
 					sprintf(
@@ -26,8 +27,7 @@
 					'</span>'
 				);
 			?>
-			</div>
-		</a>
+		</div>
 		<?php the_content(''); ?>
 		<?php
 			wp_link_pages( array(
