@@ -827,19 +827,64 @@ a:active {
 		margin-left: 1.5em;
 	}
 	/* Format Posts in List */
-	#list article{
-		width: 45vw;
-		vertical-align: top;
-	}
-	#list article .entry-content img{
-		width: 45vw !important;
-		padding-left: 10px;
-		box-sizing: content-box;
-	}
 	#list article {
-		border: 1px dashed black;
+		width: 47vw;
+		vertical-align: top;
 		box-sizing: content-box;
 		display: inline-block;
+		margin-left: 1vw;
+		position: relative;
+	}
+	/* Don't separate with a line */
+	#main #list article+article:before {
+		display: none;
+	}
+	#main #list article .entry-content img{
+		width: 47vw !important;
+		padding-left: 10px;
+		box-sizing: content-box;
+		margin-left: calc(-5vw - 10px);
+	}
+	#list article .entry-content{
+		padding-left: 5vw;
+		padding-right: 5vw;
+		min-height: 500px;
+		padding-bottom: 5px;
+	}
+	#list article .articleTitle{
+		display: none;
+	}
+	#list article .entry-content:hover .articleTitle{
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		margin-left: calc(-5vw);
+	}
+	#list article .articleTitle a,
+	#list article .articleTitle a:hover {
+		color: #fff;
+	}
+	#list article .entry-title{
+		margin: auto;
+		width: 80%;
+		margin-top: 20px;
+		font-size: 4vw;
+		margin-bottom: 15px;
+	}
+	#list article .post-edit-link{
+	    margin-left: calc(50% - 17px);
+	    background-color: orange;
+	    padding: 3px 5px;
+	}
+	#list article .entry-content .itemIntroText p,
+	#list article .edit-link {
+		margin-top: 0;
+	}
+	#list article .entry-content p:last-child,
+	#list article .edit-link {
+		margin-bottom: 0;
 	}
 }
 
@@ -1005,8 +1050,9 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/* Not On Reviews Page */
 body:not(.page-id-149) #main{
-	margin-top: 50px;
+	margin-top: 40px;
 }
 body:not(.page-id-12) #main{
 	padding: 10px;
@@ -1082,6 +1128,15 @@ body:not(.page-id-12) #main .entry-content img {
 /* Lists of Articles*/
 #list{
 	width: 100%;
+}
+/* Line between articles in a list */
+#list article+article:before {
+	content:"";
+	background: rgba(0,0,0,0.7);
+	display: block;
+	height: 1px;
+	width: 80vw;
+	margin: 0 auto;
 }
 .sticky {
 	display: block;
