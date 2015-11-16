@@ -17,7 +17,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
 			<div id="list">
-
 			<!-- Only show posts in Media Sub-Categories -->
 			<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -30,8 +29,8 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();
 			?>
 
-				<!-- Page Name -->
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+				<!-- Page Content -->
+				<?php get_template_part( 'template-parts/content', 'list' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
