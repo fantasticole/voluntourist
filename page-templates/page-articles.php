@@ -16,7 +16,17 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
+			<!-- Display Page Content -->
+			<div id="pageText">
+				<?php
+					$post_id = get_the_ID();
+					$post = get_post( $post_id, ARRAY_A );
+					$content_home = $post['post_content'];
+					echo $content_home;
+				?>
+			</div>
 			<div id="list">
+
 			<!-- Only show posts in Media Sub-Categories -->
 			<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
