@@ -870,7 +870,7 @@ a:active {
 		margin: auto;
 		width: 80%;
 		margin-top: 20px;
-		font-size: 4vw;
+		font-size: 3.5vw;
 		margin-bottom: 15px;
 	}
 	#list article .post-edit-link{
@@ -885,6 +885,17 @@ a:active {
 	#list article .entry-content p:last-child,
 	#list article .edit-link {
 		margin-bottom: 0;
+	}
+}
+@media screen and (min-width: 1280px) {
+	#list article {
+		width: 31vw;
+	}
+	#main #list article .entry-content img{
+		width: 31vw !important;
+	}
+	#list article .entry-title{
+		font-size: 2.8vw;
 	}
 }
 
@@ -1193,14 +1204,6 @@ article .entry-title {
 .edit-link {
 	display: block;
 	margin: 15px 0
-}
-/* Volunteer Page 
-#post-12 br{
-	display: none;
-}
-
-.page .entry-title{
-	font-size: 26px;
 }
 
 /* Flag Images */
