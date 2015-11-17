@@ -31,7 +31,7 @@ get_header(); ?>
 			<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$args = array(
-					'category_name' => 'travel-safety',
+					'category_name' => 'safety',
 					'posts_per_page' => 6,
 					'paged' => $paged
 				);
