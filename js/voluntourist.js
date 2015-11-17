@@ -15,15 +15,43 @@ jQuery(document).ready(function($) {
     if ($('.single-post').length > 0){
         // Get posts classes.
         var classes = $('article')[0].className.split(' ');
+        // console.log(classes);
         for (var category in classes){
                 // If the class is a parent page...
             if (parents[classes[category]]){
                 // Show parent's sub-menu.
                 $('.' + parents[classes[category]]).addClass('current_page_parent');
-                // expandParent();
+                break;
             }
         }
-    }8
+    };
+
+    function findCategories(){
+        // Get possible child catrgories.
+        var kids = $('.nav-menu .current_page_parent .children')[0].children;
+        // Grab parent link.
+        var sibLink = $('.nav-menu .current_page_parent .children').prev()[0].href;
+        var kiddies = [];
+        // Aggregate potential categories with their selectors.
+        for (var x = 0; x < kids.length; x++){
+            var current = kids[x];
+            var currentClass = current.className.split(' ')[1]
+            var cat = current.childNodes[0].href;
+            cat = cat.slice(cat.indexOf(sibLink) + sibLink.length, cat.length - 1)
+            kiddies.push([cat, currentClass]);
+        };
+        var classes = $('article')[0].className.split(' ');
+        // For each category associated with the post...
+        for (var category in classes){
+            // Check it against the current child pages,
+            for (var x = 0; x < kiddies.length; x++){
+                if (kiddies[x][0].indexOf(classes[category]) === 0){
+                    // And mark the category in the menu.
+                    $('.' + kiddies[x][1]).addClass('current_page_parent');
+                }
+            }
+        }
+    };
 
     function expandParent(){
         if ($(window).width() < 601 && $('.current_page_parent').length > 0){
@@ -39,25 +67,6 @@ jQuery(document).ready(function($) {
     };
 
     $( window ).resize(function(){expandParent()});
-
-    // $('.single-post .itemBody figure:odd').css({
-    //     'float': 'right',
-    //     'margin-left' : '30px'
-    // });
-    // $('.single-post .itemBody figure:even').css({
-    //     'float': 'left',
-    //     'margin-right' : '30px'
-    // });
-
-    // $('.single-post .itemBody p img:odd').css({
-    //     'float': 'right',
-    //     'margin-left' : '30px'
-    // });
-    // $('.single-post .itemBody p img:even').css({
-    //     'float': 'left',
-    //     'margin-right' : '30px',
-    //     'margin-left' : '0'
-    // });
 
 	// //Set font-size based on container size.
 	// $.fn.textfill = function() {
@@ -82,6 +91,9 @@ jQuery(document).ready(function($) {
 
  //    $('.adjust').textfill();
 
+    if ($('.single').length){
+        findCategories();
+    }
     expandParent();
 });
 
