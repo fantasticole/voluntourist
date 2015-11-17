@@ -32,8 +32,13 @@ get_header(); ?>
 
 			<!-- Only show posts in Reviews Category -->
 			<?php
-				query_posts( array ( 'category_name' => 'reviews', 'posts_per_page' => 6 ) );
-				// query_posts( array ( 'category_name' => 'reviews, articles, celebrities-give-back, get-inspired, media, must-see, news, reviews, special-features', 'posts_per_page' => -1 ) );
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$args = array(
+					'category_name' => 'reviews',
+					'posts_per_page' => 6,
+					'paged' => $paged
+				);
+				query_posts( $args );
 				while ( have_posts() ) : the_post();
 			?>
 
@@ -53,7 +58,6 @@ get_header(); ?>
 			<!-- Pagination Links -->
 			<?php
 				the_posts_pagination( array(
-					'mid_size'  => 2,
 					'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'textdomain' ),
 					'next_text' => __( '<i class="fa fa-angle-right"></i>', 'textdomain' ),
 				) );

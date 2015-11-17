@@ -25,6 +25,19 @@ get_header(); ?>
 					echo $content_home;
 				?>
 			</div>
+			<!-- <br> -->
+			<!-- <br> -->
+			<!-- Show Child Categories -->
+			<?php
+				// $args = array('parent' => 'media');
+				// $categories = get_categories( $args );
+				// echo $categories
+			    if (is_category()) {
+			    $this_category = get_category($cat);
+			    echo $this_category;
+			    }
+			?>
+			<!-- <br> -->
 			<div id="list">
 
 			<!-- Only show posts in Media Sub-Categories -->
@@ -55,7 +68,6 @@ get_header(); ?>
 			<!-- Pagination Links -->
 			<?php
 				the_posts_pagination( array(
-					'mid_size'  => 2,
 					'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'textdomain' ),
 					'next_text' => __( '<i class="fa fa-angle-right"></i>', 'textdomain' ),
 				) );

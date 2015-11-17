@@ -29,7 +29,13 @@ get_header(); ?>
 
 			<!-- Only show posts in Must See Category -->
 			<?php
-				query_posts( array ( 'category_name' => 'must-see', 'posts_per_page' => 6 ) );
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$args = array(
+					'category_name' => 'must-see',
+					'posts_per_page' => 6,
+					'paged' => $paged
+				);
+				query_posts( $args );
 				while ( have_posts() ) : the_post();
 			?>
 
@@ -49,7 +55,6 @@ get_header(); ?>
 			<!-- Pagination Links -->
 			<?php
 				the_posts_pagination( array(
-					'mid_size'  => 2,
 					'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'textdomain' ),
 					'next_text' => __( '<i class="fa fa-angle-right"></i>', 'textdomain' ),
 				) );
