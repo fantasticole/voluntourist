@@ -819,6 +819,9 @@ a:active {
 	.main-navigation ul ul a {
 		padding-bottom: 2px;
 	}
+	.current_page_parent .children {
+		max-height: 33px;
+	}
 	/* Volunteer Page Flag Images */
 	.page-id-12 #main figure img,
 	#post-12 figure {
@@ -937,6 +940,38 @@ a:active {
 		max-width: 600px;
 		display: block;
 	}
+	/* Sidebar */
+	#secondary .widget_meta{
+		width: 30vw;
+	    position: absolute;
+	    bottom: 90px;
+	    left: calc(8vw - 10px);
+	}
+	body:not(.page-id-7) #secondary .widget_meta{
+	    bottom: 45px;
+	}
+	#secondary .widget_facebook_likebox {
+	    width: 60vw;
+	    float: right;
+	    margin-right: calc(8vw - 10px);
+	}
+	/* Not on Home Page */
+	body:not(.page-id-7) #secondary .widget_search {
+	    width: 60vw;
+	    position: absolute;
+	    bottom: 133px;
+	    right: calc(8vw - 10px);
+	}
+	body:not(.page-id-7) #secondary .widget_search .search-field{
+		width: 55vw;
+	}
+	#secondary .widget_categories {
+		width: 60vw;
+	    position: absolute;
+	    bottom: 45px;
+	    right: calc(8vw - 10px);
+	}
+	/* Footer */
 	#footer .social{
 		width: 60vw;
 	}
@@ -947,7 +982,6 @@ a:active {
 		display: inherit;
 	}
 }
-
 @media screen and (min-width: 930px) {
 	.single #main .entry-content figure.alignright {
 		margin-left: 20px;
@@ -995,7 +1029,21 @@ a:active {
 	float: left;
 	width: 50%;
 }
-
+/* Sidebar */
+#secondary{
+	min-height: 200px;
+}
+.page-id-12 #secondary{
+	display: none;
+}
+.widget_search .search-field{
+	width: 70vw;
+}
+.widget_meta ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 /*Footer*/
 #footer{
 	background-color: rgba(0, 18, 66, 0.9);
@@ -1130,6 +1178,12 @@ a:active {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
+    display: inline-block;
+    width: 100vw;
+    text-align: center;
+}
+.widget h2{
+	margin: 10px 0;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -1172,6 +1226,8 @@ body:not(.page-id-12) #main{
 	}
 	.site-description{
 		text-align: center;
+		width: 80vw;
+		margin-left: 10vw;
 	}
 
 	/*Image & Video Carousel*/
