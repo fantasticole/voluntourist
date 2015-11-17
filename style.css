@@ -550,7 +550,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: #CA3C66;
+	color: #FFA500;
 }
 
 a:focus {
@@ -640,7 +640,8 @@ a:active {
 }
 
 .main-navigation ul ul li:hover,
-.main-navigation ul ul .current_page_item {
+.main-navigation ul ul .current_page_item,
+.main-navigation ul ul li.current_page_parent {
 	background-color: rgba(0, 18, 66, 0.2);
 }
 
@@ -811,7 +812,8 @@ a:active {
 	.child article{
 		margin-top: 40px;
 	}
-	#list article{
+	.page-id-161 article,
+	#list article {
 		margin-top: 10px;
 	}
 	.main-navigation ul ul a {
@@ -826,6 +828,7 @@ a:active {
 	#post-12 figure:hover figcaption{
 		width: 25vw;
 		margin-top:8vw;
+		color: #FFA500;
 	}
 	/* Our Team Page */
 	#main #post-27 .entry-content img{
@@ -913,7 +916,7 @@ a:active {
 	}
 	/* Single Post */
 	.single .entry-meta{
-		margin-left: 10vw;
+		margin-left: calc(10vw - 10px);
 	}
 	/* Keep Captions Below Images */
 	.entry-content figure{
@@ -1190,8 +1193,11 @@ body:not(.page-id-12) #main .entry-content img {
 #review{
 	margin-top: 45px;
 	margin-bottom: 20px;
-	background-color: pink;
+	background-color: rgba(255, 165, 0, 0.65);
 	text-align: center;
+}
+#review a:hover{
+	color: #fff;
 }
 
 #pageText{
@@ -1315,11 +1321,11 @@ article .entry-title {
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .page-id-12 figure:hover figcaption{
