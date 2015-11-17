@@ -939,6 +939,7 @@ a:active {
 		width: 80vw !important;
 		max-width: 600px;
 		display: block;
+		margin-bottom: 5px;
 	}
 	/* Sidebar */
 	#secondary .widget_meta{
@@ -1178,6 +1179,8 @@ a:active {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
+}
+.widget-area .widget {
     display: inline-block;
     width: 100vw;
     text-align: center;
@@ -1419,6 +1422,16 @@ article .entry-title {
 /* Volunteer White Space */
 #post-12{
 	margin-bottom: 0;
+}
+
+.entry-content iframe {
+	margin-left: 10vw;
+	width: 60vw;
+	height: 34vw;
+}
+#comments{
+	width: 80vw;
+	margin: auto;
 }
 
 .pagination{
