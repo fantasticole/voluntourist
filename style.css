@@ -937,6 +937,15 @@ a:active {
 		max-width: 600px;
 		display: block;
 	}
+	#footer .social{
+		width: 60vw;
+	}
+	#footer .copyright{
+		width: 40vw;
+	}
+	#footer .socialLink{
+		display: inherit;
+	}
 }
 
 @media screen and (min-width: 930px) {
@@ -1011,22 +1020,27 @@ a:active {
 		color: #fff;
 	}
 	#footer a:hover{
-		color: #FFBEB8;
+		color: #FFA500;
 	}
-	#footer .social{
-		padding-top: 5px;
-		width: 50vw;
+	.site-footer .social{
+		padding: 5px 0 0 5px;
+		width: 40vw;
 		float: left;
+		text-align: left;
 	}
 	#footer .social i{
 		font-size: 30px;
 		margin-left: 10px;
 	}
-	#footer .copyright{
+	.site-footer .copyright{
 		font-size: 20px;
-		padding-top: 5px;
-		width: 50vw;
+		padding: 5px 15px 0 0;
+		width: 60vw;
 		float: right;
+		text-align: right;
+	}
+	.socialLink{
+		display: none;
 	}
 
 /*--------------------------------------------------------------
@@ -1341,6 +1355,11 @@ article .entry-title {
 	font-family: 'Droid Serif', serif;
 	font-style: normal;
 }
+.page-id-12 #main figure:hover figcaption a,
+.page-id-12 #main figure:hover figcaption a:visited,
+.page-id-12 #main figure:hover figcaption a:hover{
+	color: #FFA500;
+}
 /* Volunteer White Space */
 #post-12{
 	margin-bottom: 0;
@@ -1351,6 +1370,27 @@ article .entry-title {
 	font-size: 20px;
 }
 
+#childPages{
+	display: flex;
+	flex-direction: column;
+	width: calc(100vw - 20px);
+	height: 100%;
+}
+#childPages div{
+	flex: 1;
+	list-style: none;
+	text-align: center;
+	border: 1px dashed black;
+}
+#childPages div+div{
+	margin-top: 10px;
+}
+#childPages *{
+	margin: 0;
+}
+#childPages p{
+	margin-top: 10px;
+}
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/

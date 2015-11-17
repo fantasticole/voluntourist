@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: About Page
  *
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -13,22 +13,34 @@
 
 get_header(); ?>
 
-	<div class="site-branding">
-		<?php layerslider(2) ?>
-		<?php if ( is_front_page() && is_home() ) : ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php else : ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php endif; ?>
-		<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-	</div><!-- .site-branding -->
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<!-- Page Name -->
+				<div id="childPages">
+				<?php
+					$children = get_pages('child_of='.$post->ID.'&parent='.$post->ID);
+				?>
+				<?php foreach ( $children as $child ) : 
+				    setup_postdata( $child ); ?>
+				<div id="childPage">
+					<h2>
+						<a href="<?php echo get_permalink($child->ID); ?>">
+							<?php echo get_the_title( $child ); ?>
+						</a>
+					</h2>
+					<p>
+						<?php echo get_the_excerpt($child); ?>
+					</p>
+			   </div>
+				<?php
+					endforeach;
+				    wp_reset_postdata();
+			    ?>
+				</div>
+
+				<!-- Page Name & Content-->
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 				<?php
