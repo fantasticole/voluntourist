@@ -18,7 +18,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<div id="childPages">
+				<div id="childContent">
 				<?php
 					$children = get_pages('child_of='.$post->ID.'&parent='.$post->ID);
 				?>
