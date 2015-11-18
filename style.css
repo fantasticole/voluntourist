@@ -1007,6 +1007,9 @@ a:active {
 	#list article .entry-title{
 		font-size: 2.8vw;
 	}
+	#list article .articleTitle .entry-title{
+		font-size: 2vw;
+	}
 }
 
 .site-main .comment-navigation,
@@ -1471,6 +1474,7 @@ article .entry-title {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.comment-content,
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1523,7 +1527,7 @@ object {
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	width:100vw;
-	max-width: 600px;
+	max-width: 800px;
 }
 
 .page .post .entry-content img,

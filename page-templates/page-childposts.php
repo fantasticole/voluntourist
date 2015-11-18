@@ -16,15 +16,38 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<div id="childContent">
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<div id="childPages">
 				<?php
 					$children = get_pages('child_of='.$post->ID.'&parent='.$post->ID);
+					$childPosts = array();
 				?>
 				<?php foreach ( $children as $child ) : 
 				    setup_postdata( $child ); ?>
-				<div id="childPage" class="post-<?php echo$child->ID; ?>">
+					<?php $slug = basename(get_permalink($child)); ?>
+					<?php $posts = array(); ?>
+					<?php
+						$args = array(
+							'category_name' => $slug,
+							'showposts' => 3
+						);
+						query_posts( $args );
+					if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
+					<?php
+					$permalink = get_permalink();
+					$title = get_the_title();
+					$thumb = get_the_post_thumbnail();
+					$excerpt = get_the_excerpt();
+					array_push($posts,$permalink,$title,$thumb,$excerpt);
+					?>
+					<?php endwhile; ?><?php endif; ?>
+					<?php array_push($childPosts,$posts); ?>
+				<?php endforeach; ?>
+				<?php wp_reset_postdata(); ?>
+				<?php foreach ( $children as $index => $child ) : 
+				    setup_postdata( $child ); ?>
+				<div id="childPage" class="post-<?php echo $child->ID; ?>">
 					<h2>
 						<a href="<?php echo get_permalink($child->ID); ?>">
 							<?php echo get_the_title( $child ); ?>
@@ -33,23 +56,17 @@ get_header(); ?>
 					<p>
 						<?php echo get_the_excerpt($child); ?>
 					</p>
-					<div>
-						<?php $slug = basename(get_permalink($child)); ?>
-						<?php
-							$args = array(
-								'category_name' => $slug,
-								'posts_per_page' => 1
-							);
-							query_posts( $args );
-						?>
-					</div>
+					<?php for ($num = 0; $num < count($childPosts[$index]); $num+=4){
+							echo '<div class="article">';
+							echo '<a href="'.$arr[$num].'"><h4>'.$childPosts[$index][$num+1].'</h4></a>';
+							echo $childPosts[$index][$num+2];
+							echo '<br><p>';
+							echo $childPosts[$index][$num+3];
+							echo '</p></div>';
+					} ?>
 				</div>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
-				</div>
-
-				<!-- Page Name & Content-->
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 
 				<?php
@@ -60,6 +77,7 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // End of the loop. ?>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
