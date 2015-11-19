@@ -515,13 +515,13 @@ textarea {
 }
 
 #post-18 form{
-	width: 80vw;
+	width: 70vw;
 	margin: auto;
 }
 #main .contact-form input[type=email],
 #main .contact-form input[type=text],
 #main .contact-form textarea {
-	width: 80vw;
+	width: 70vw;
 	border-radius: 0;
 	margin-bottom: 15px;
 	min-width: 300px;
@@ -920,7 +920,7 @@ a:active {
 	}
 	/* Single Post */
 	.single .entry-meta{
-		margin-left: calc(10vw - 10px);
+		margin-left: calc(15vw - 10px);
 	}
 	/* Keep Captions Below Images */
 	.entry-content figure{
@@ -930,20 +930,20 @@ a:active {
 		margin: 0;
 	}
 	.single #main .entry-content figure {
-		width: 80vw !important;
+		width: 70vw !important;
 	}
 	body.single #main .entry-content figure img,
 	body.single #main .entry-content p > img,
 	.single #main .entry-content figure.alignright img,
 	.single #main .entry-content figure.alignleft img,
-	#primary #main article.page .entry-content img {
+	#main #country article.page .entry-content img {
 		margin: auto;
-		width: 80vw !important;
+		width: 70vw !important;
 		max-width: 600px;
 		display: block;
 		margin-bottom: 5px;
 	}
-	#main article.page .entry-content img {
+	#main #country article.page .entry-content img {
 		padding-left: 20px;
 		float: right;
 	}
@@ -1253,8 +1253,8 @@ body:not(.page-id-12) #main{
 	}
 	.site-description{
 		text-align: center;
-		width: 80vw;
-		margin-left: 10vw;
+		width: 70vw;
+		margin-left: 15vw;
 	}
 
 	/*Image & Video Carousel*/
@@ -1264,18 +1264,18 @@ body:not(.page-id-12) #main{
 	}
 
 body:not(.page-id-12) .entry-content{
-	padding-left: calc(10vw - 10px);
-	padding-right: calc(10vw - 10px);
+	padding-left: calc(15vw - 10px);
+	padding-right: calc(15vw - 10px);
 }
 
 body:not(.page-id-12) #main .entry-content img {
 	width: 100vw;
-	margin-left: -10vw;
+	margin-left: -15vw;
 }
 #main .entry-content p > img,
 #post-27 .entry-content img {
 	width: 100vw;
-	margin-left: -10vw;
+	margin-left: -15vw;
 	float: none;
 }
 
@@ -1298,7 +1298,7 @@ body:not(.page-id-12) #main .entry-content img {
 }
 
 #pageText{
-	width: 80vw;
+	width: 70vw;
 	margin: auto;
 }
 body:not(.page-id-149) #pageText{
@@ -1319,7 +1319,7 @@ body:not(.page-id-149) #pageText{
 	background: rgba(0,0,0,0.7);
 	display: block;
 	height: 1px;
-	width: 80vw;
+	width: 70vw;
 	margin: 0 auto;
 }
 #list article .entry-content{
@@ -1458,12 +1458,12 @@ article .entry-title {
 }
 
 .entry-content iframe {
-	margin-left: 10vw;
+	margin-left: 15vw;
 	width: 60vw;
 	height: 34vw;
 }
 #comments{
-	width: 80vw;
+	width: 70vw;
 	margin: auto;
 }
 
@@ -1497,14 +1497,14 @@ article .entry-title {
 body:not(.page-id-2) #childPage h2,
 body:not(.page-id-2) #childPage > p,
 .article {
-	width: 80vw;
-	margin-left: calc(10vw - 10px);
+	width: 70vw;
+	margin-left: calc(15vw - 10px);
 }
 #childPage p{
 	margin-top: 10px;
 }
 #childPage.about{
-	padding: 0 10vw;
+	padding: 0 15vw;
 }
 .article {
 	display: block;
