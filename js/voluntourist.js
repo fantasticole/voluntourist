@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
         if ($(window).width() < 601 && $('.current_page_parent').length > 0){
             var childLIs = $('.current_page_parent .children')[0].children;
             var margin = 28*childLIs.length;
-            $(".current_page_parent").css("margin-bottom", margin);
+            $(".nav-menu > .current_page_parent").css("margin-bottom", margin);
         }
         else if ($(window).width() < 601 && $('.current_page_item .children').length > 0){
             var childLIs = $('.current_page_item .children')[0].children;
