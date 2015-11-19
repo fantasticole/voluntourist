@@ -35,11 +35,11 @@ get_header(); ?>
 						query_posts( $args );
 					if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
 					<?php
+					$thumb = get_the_post_thumbnail();
 					$permalink = get_permalink();
 					$title = get_the_title();
-					$thumb = get_the_post_thumbnail();
 					$excerpt = get_the_excerpt();
-					array_push($posts,$permalink,$title,$thumb,$excerpt);
+					array_push($posts,$thumb,$permalink,$title,$excerpt);
 					?>
 					<?php endwhile; ?><?php endif; ?>
 					<?php array_push($childPosts,$posts); ?>
@@ -58,9 +58,9 @@ get_header(); ?>
 					</p>
 					<?php for ($num = 0; $num < count($childPosts[$index]); $num+=4){
 							echo '<div class="article">';
-							echo '<a href="'.$arr[$num].'"><h4>'.$childPosts[$index][$num+1].'</h4></a>';
-							echo $childPosts[$index][$num+2];
-							echo '<br><p>';
+							echo $childPosts[$index][$num];
+							echo '<a href="'.$arr[$num+1].'"><h4>'.$childPosts[$index][$num+2].'</h4></a>';
+							echo '<p class="childText">';
 							echo $childPosts[$index][$num+3];
 							echo '</p></div>';
 					} ?>

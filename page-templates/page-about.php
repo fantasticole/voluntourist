@@ -24,7 +24,7 @@ get_header(); ?>
 				?>
 				<?php foreach ( $children as $child ) : 
 				    setup_postdata( $child ); ?>
-				<div id="childPage">
+				<div id="childPage" class="about">
 					<h2>
 						<a href="<?php echo get_permalink($child->ID); ?>">
 							<?php echo get_the_title( $child ); ?>
