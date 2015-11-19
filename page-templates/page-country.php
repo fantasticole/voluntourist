@@ -18,16 +18,17 @@ get_header(); ?>
 			<div id="country">
 				<div class="countryList">
 					<strong>WHY VOLUNTEER IN</strong>
-					<form action="<?php bloginfo('url'); ?>" method="get">
-					<?php
-						$current = ( is_page() ) ? $post->ID : 0;
-						$args = array(
-							'child_of' => 12,
-							'selected' => $current,
-							'echo' => 0);
-						echo str_replace('<select ', '<select onchange="this.form.submit()" ', wp_dropdown_pages( $args ));
-					?>
-					</form>
+					<div class="country-dropdown">
+						<p class="location"></p>
+						<ul class="dropdown">
+							<?php
+								$args = array(
+									'child_of' => 12,
+									'title_li'     => __(''),);
+								 wp_list_pages( $args );
+							?>
+						</ul>
+					</div>
 				</div>
 
 			<?php while ( have_posts() ) : the_post(); ?>

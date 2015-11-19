@@ -68,28 +68,25 @@ jQuery(document).ready(function($) {
 
     $( window ).resize(function(){expandParent()});
 
-	// //Set font-size based on container size.
-	// $.fn.textfill = function() {
-	// 	var num = 50;
-	// 	var current = $(this)[0];
- //        var height = $(this).height();
- //        var width = $(this).width();
- //        console.log(current.style.fontSize);
- //        console.log(height);
- //        console.log(width);
- //        var textHeight;
- //        var textWidth;
- //        do {
- //            $(current).css('font-size', num);
- //            textHeight = $(this).height();
- //            textWidth = $(this).width();
- //            num = num - 1;
- //        } while ((textHeight > height || textWidth > width) && num > 3);
- //        console.log(current.style.fontSize);
- //        return this;
- //    }
+    $(document).click(function() {
+        $('.country-dropdown').removeClass('active');
+    });
 
- //    $('.adjust').textfill();
+    $('.country-dropdown').click(function(event){
+        $(this).toggleClass('active');
+        return false;
+    });
+
+    $('.country-dropdown li a').click(function(){
+        var url = $(this)[0].href;
+        window.location.href = url;
+    });
+
+    if ($('.location').length > 0){
+        var currentCountry = $('.dropdown .current_page_item a')[0].innerHTML;
+        $('.location').text(currentCountry);
+        $('.location').append('  <i class="fa fa-angle-double-left"></i>');
+    }
 
     if ($('.single').length){
         findCategories();

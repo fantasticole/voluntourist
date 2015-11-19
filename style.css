@@ -287,7 +287,8 @@ body,
 button,
 input,
 select,
-textarea {
+textarea,
+.country-dropdown .location {
 	color: #757575;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 300;
@@ -1343,33 +1344,86 @@ body:not(.page-id-149) #pageText{
 }
 
 /* Country Pages */
-/* Country Dropdown Menu */
 .countryList{
 	padding-left: calc(15vw - 10px);
 	margin-top: 30px;
 }
+/* Country Dropdown Menu */
+.countryList .country-dropdown {
+    position: relative;
+    bottom: -2px;
+    width: 145px;
+    height: 21px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: content-box;
+}
+.countryList .country-dropdown .location {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+    padding-left: 1px;
+    color: #fff;
+    background-color: #757575;
+    padding-right: 7px;
+    padding-left: 5px;
+}
+.countryList .country-dropdown .location:hover,
+.country-dropdown.active .location {
+	background-color: #FFA500;
+}
+/* Dropdown Arrow */
+.country-dropdown .location i {
+	transition-duration: 200ms;
+	font-size: 20px;
+	color: #244292;
+}
+.country-dropdown.active .location i {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	transition-duration: 200ms;
+}
+
+.country-dropdown ul.dropdown {
+    position: absolute;
+    top: 23px;
+    right: 0px;
+    margin-left: 0;
+    padding-left: 0;
+    background: pink;
+    transition: all 0.3s ease-out;
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+}
+.country-dropdown ul.dropdown li {
+	width: 100%;
+}
+.country-dropdown ul.dropdown li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+    transition: all 0.3s ease-out;
+}
+
+/* Hover state */
+.country-dropdown ul.dropdown li:hover a {
+    color: #f3f8f8;
+}
+.country-dropdown.active ul.dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+.country-dropdown.active ul.dropdown .current_page_item{
+	background-color: transparent;
+	font-weight: bold;
+}
 .countryList *{
 	display: inline-block;
-}
-.countryList select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background: transparent;
-	width: 150px;
-	padding: 5px;
-	border: 1px solid #ccc;
-	height: 34px;
-	color: #757575;
-	font-family: 'Oswald', sans-serif;
-	font-weight: 400;
-	letter-spacing: 1px;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-.countryList select::-ms-expand { /* for IE 11 */
-	display: none;
 }
 #country article {
 	margin-top: 0;
