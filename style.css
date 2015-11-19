@@ -303,7 +303,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Droid Serif', serif;
+	font-family: 'Belleza', sans-serif;
 	clear: both;
 	text-transform: uppercase;
 }
@@ -943,9 +943,8 @@ a:active {
 		display: block;
 		margin-bottom: 5px;
 	}
-	#main #country article.page .entry-content img {
-		padding-left: 20px;
-		float: right;
+	#country article.page .entry-content img {
+		float: none;
 	}
 	/* Sidebar */
 	#secondary .widget_meta{
@@ -1002,8 +1001,6 @@ a:active {
 	#childPage .article .childText{
 		display: block;
 	}
-}
-@media screen and (min-width: 930px) {
 	.single #main .entry-content figure.alignright {
 		margin-left: 20px;
 		max-width: 600px;
@@ -1015,6 +1012,12 @@ a:active {
 	.single #main .entry-content figure.alignright img,
 	.single #main .entry-content figure.alignleft img {
 		margin-left: 0;
+	}
+}
+@media screen and (min-width: 1100px) {
+	#main #country article.page .entry-content img {
+		padding-left: 20px;
+		float: right;
 	}
 }
 @media screen and (min-width: 1280px) {
@@ -1361,7 +1364,7 @@ body:not(.page-id-149) #pageText{
 	margin: 1.5em 0 0;
 }
 article .entry-title {
-	font-family: 'Droid Serif', serif;
+	font-family: 'Belleza', sans-serif;
 }
 .page .entry-title,
 .single .entry-title {
@@ -1424,7 +1427,7 @@ article .entry-title {
 	text-shadow: 2px 2px 0px #001242;
 	font-size: 4vw;
 	position: absolute;
-	font-family: 'Droid Serif', serif;
+	font-family: 'Belleza', sans-serif;
 	font-style: normal;
 	text-transform: uppercase;
 }
