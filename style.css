@@ -609,7 +609,8 @@ a:active {
 
 /* Hide submenu on inactive parent pages and review submission page. */
 .page_item .children,
-.page-item-149.current_page_parent .children {
+.page-item-149.current_page_parent .children,
+.page-item-12.current_page_parent .children {
 	display: none;
 }
 
@@ -1339,6 +1340,39 @@ body:not(.page-id-149) #pageText{
 #list article .edit-link{
 	position: absolute;
 	bottom: 0;
+}
+
+/* Country Pages */
+/* Country Dropdown Menu */
+.countryList{
+	padding-left: calc(15vw - 10px);
+	margin-top: 30px;
+}
+.countryList *{
+	display: inline-block;
+}
+.countryList select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: transparent;
+	width: 150px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	height: 34px;
+	color: #757575;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+.countryList select::-ms-expand { /* for IE 11 */
+	display: none;
+}
+#country article {
+	margin-top: 0;
 }
 
 .sticky {
