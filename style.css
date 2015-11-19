@@ -45,18 +45,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 /* COLORS: */
-/* #667E98 - slate grey/blue */
+/* #667E98 - old slate grey/blue */
 /* #0A0A0A - black */
-/* #EEDBFF - iris */
-/* #1B998B - sea green */
-/* #EF767A - salmon */
-/* #88A1C6 - carolina blue */
-/* #81F4E1 - turquoise */
-/* #001242 - deep blue */
+/* #001242 - deep blue (36, 66, 146) */
 /* #9C9C9C - light grey */
 /* #757575 - dark grey */
-/* #CA3C66 - rose */
 /* #FFA500 - orange */
+/* #FFC459 - light orange (255, 196, 89) */
+/* #244292 - new navy (0, 18, 66) */
+/* #86B340 - green */
 
 
 /*--------------------------------------------------------------
@@ -308,6 +305,7 @@ h5,
 h6 {
 	font-family: 'Droid Serif', serif;
 	clear: both;
+	text-transform: uppercase;
 }
 
 p {
@@ -576,14 +574,14 @@ a:active {
 	display: block;
 	width: 100%;
     height: 40px;
-	background-color: rgba(0, 18, 66, 0.9);
+	background-color: rgba(36, 66, 146, 0.9);
 	position: fixed;
 	top: 0;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .nav-menu{
-	background-color: rgba(0, 18, 66, 0.9);
+	background-color: rgba(36, 66, 146, 0.9);
 }
 
 .main-navigation ul {
@@ -609,7 +607,9 @@ a:active {
 	color: #fff;
 }
 
-.page_item .children {
+/* Hide submenu on inactive parent pages and review submission page. */
+.page_item .children,
+.page-item-149.current_page_parent .children {
 	display: none;
 }
 
@@ -636,13 +636,13 @@ a:active {
 
 .main-navigation ul ul li {
 	flex: 1;
-	background-color: rgba(0, 18, 66, 0.6);
+	background-color: rgba(36, 66, 146, 0.6);
 }
 
 .main-navigation ul ul li:hover,
 .main-navigation ul ul .current_page_item,
 .main-navigation ul ul li.current_page_parent {
-	background-color: rgba(0, 18, 66, 0.2);
+	background-color: rgba(36, 66, 146, 0.2);
 }
 
 .main-navigation ul ul li:hover a {
@@ -659,7 +659,7 @@ a:active {
 .main-navigation li.focus > a,
 .current_page_item > a,
 .current_page_parent > a {
-	color: rgba(0, 18, 66, 0.9);
+	color: rgba(36, 66, 146, 0.9);
 }
 
 .main-navigation ul ul :hover > a,
@@ -719,7 +719,7 @@ a:active {
 			background-color: #fff;
 		}
 		.menu-toggle:hover span{
-			background-color: rgba(0, 18, 66, 0.9);
+			background-color: rgba(36, 66, 146, 0.9);
 		}
 		.menu-toggle span{
 			display:block;
@@ -799,14 +799,14 @@ a:active {
 		border: none;
 	}
 	.main-navigation ul ul li:hover a{
-		color:rgba(0, 18, 66, 0.9);
+		color:rgba(36, 66, 146, 0.9);
 	}
 	/* Volunteer Child Page Nav Links */
 	.page-item-12 .children{
 		height: 28px;
 	}
 	.site-content #review{
-		margin-top: 75px;
+		margin-top: 60px;
 	}
 	.single .site-main article,
 	.child article{
@@ -828,7 +828,7 @@ a:active {
 		height: 25vw;
 		width: 25vw !important;
 	}
-	#post-12 figure:hover figcaption{
+	#post-12 figure figcaption{
 		width: 25vw;
 		margin-top:8vw;
 		color: #FFA500;
@@ -875,6 +875,7 @@ a:active {
 	}
 	#list article .entry-content:hover .articleTitle{
 		display: block;
+		text-transform: uppercase;
 		width: 100%;
 		height: 100%;
 		background-color: rgba(0,0,0,0.3);
@@ -934,12 +935,17 @@ a:active {
 	body.single #main .entry-content figure img,
 	body.single #main .entry-content p > img,
 	.single #main .entry-content figure.alignright img,
-	.single #main .entry-content figure.alignleft img {
+	.single #main .entry-content figure.alignleft img,
+	#primary #main article.page .entry-content img {
 		margin: auto;
 		width: 80vw !important;
 		max-width: 600px;
 		display: block;
 		margin-bottom: 5px;
+	}
+	#main article.page .entry-content img {
+		padding-left: 20px;
+		float: right;
 	}
 	/* Sidebar */
 	#secondary .widget_meta{
@@ -981,6 +987,20 @@ a:active {
 	}
 	#footer .socialLink{
 		display: inherit;
+	}
+}
+@media screen and (min-width: 930px) {
+	#childPage .article {
+		width: 32vw;
+		display: inline-block;
+		float: left;
+		margin-left: 0;
+	}
+	#childPage .article + .article {
+		margin-left: calc(2vw - 11px);
+	}
+	#childPage .article .childText{
+		display: block;
 	}
 }
 @media screen and (min-width: 930px) {
@@ -1036,6 +1056,7 @@ a:active {
 /* Sidebar */
 #secondary{
 	min-height: 200px;
+	margin-top: 15px;
 }
 .page-id-12 #secondary{
 	display: none;
@@ -1050,7 +1071,7 @@ a:active {
 }
 /*Footer*/
 #footer{
-	background-color: rgba(0, 18, 66, 0.9);
+	background-color: rgba(36, 66, 146, 0.9);
 	color: #9C9C9C;
 	text-align: center;
 	height: 40px;
@@ -1072,7 +1093,7 @@ a:active {
 		color: #fff;
 	}
 	#footer a:hover{
-		color: #FFA500;
+		color: #FFC459;
 	}
 	.site-footer .social{
 		padding: 5px 0 0 5px;
@@ -1268,7 +1289,7 @@ body:not(.page-id-12) #main .entry-content img {
 /* Review Submission Link */
 #review{
 	margin-top: 45px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background-color: rgba(255, 165, 0, 0.65);
 	text-align: center;
 }
@@ -1304,6 +1325,10 @@ body:not(.page-id-149) #pageText{
 #list article .entry-content{
 	padding-bottom: 20px;
 	position: relative;
+}
+#list article .entry-content p strong{
+	width: 100%;
+	text-align: center;
 }
 #list article .entry-title{
 	font-size: 5vw;
@@ -1383,16 +1408,32 @@ article .entry-title {
 	margin: 0;
 	overflow: hidden;
 }
-.page-id-12 figcaption{
-	display: none;
-}
-
-#post-12 figure:hover img{
+.page-id-12 figure img{
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	-ms-filter: grayscale(100%);
 	-o-filter: grayscale(100%);
 	filter: grayscale(100%);
+}
+.page-id-12 figcaption{
+	display: block;
+	text-align: center;
+	margin: 0;
+	width: 33.3vw;
+	margin-top:12vw;
+	text-shadow: 2px 2px 0px #001242;
+	font-size: 4vw;
+	position: absolute;
+	font-family: 'Droid Serif', serif;
+	font-style: normal;
+	text-transform: uppercase;
+}
+#post-12 figure:hover img{
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	-ms-filter: grayscale(0%);
+	-o-filter: grayscale(0%);
+	filter: grayscale(0%);
 	webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
@@ -1403,23 +1444,12 @@ article .entry-title {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
 .page-id-12 figure:hover figcaption{
-	display: block;
-	text-align: center;
-	margin: 0;
-	width: 33.3vw;
-	margin-top:12vw;
-	color: #fff;
-	text-shadow: 2px 2px 0px #001242;
-	font-size: 5vw;
-	position: absolute;
-	font-family: 'Droid Serif', serif;
-	font-style: normal;
+	display: none;
 }
-.page-id-12 #main figure:hover figcaption a,
-.page-id-12 #main figure:hover figcaption a:visited,
-.page-id-12 #main figure:hover figcaption a:hover{
+.page-id-12 #main figure figcaption a,
+.page-id-12 #main figure figcaption a:visited,
+.page-id-12 #main figure figcaption a:hover{
 	color: #FFA500;
 }
 /* Volunteer White Space */
@@ -1442,26 +1472,53 @@ article .entry-title {
 	font-size: 20px;
 }
 
-#childPages{
+#childContent{
 	display: flex;
 	flex-direction: column;
 	width: calc(100vw - 20px);
 	height: 100%;
 }
-#childPages div{
+#childPage {
 	flex: 1;
 	list-style: none;
 	text-align: center;
-	border: 1px dashed black;
 }
-#childPages div+div{
+#childPage:after {
+	content:"";
+	background: rgba(0,0,0,0.2);
+	display: block;
+	height: 1px;
+	width: 75vw;
+	margin: 0 auto;
+}
+#childPage + #childPage{
 	margin-top: 10px;
 }
-#childPages *{
-	margin: 0;
+body:not(.page-id-2) #childPage h2,
+body:not(.page-id-2) #childPage > p,
+.article {
+	width: 80vw;
+	margin-left: calc(10vw - 10px);
 }
-#childPages p{
+#childPage p{
 	margin-top: 10px;
+}
+#childPage.about{
+	padding: 0 10vw;
+}
+.article {
+	display: block;
+	float: none;
+	margin-top: 15px;
+	padding: 5px;
+	/*background-color: rgba(0, 18, 66,0.05);*/
+	/*box-shadow: 1px 1px 5px rgba(0, 18, 66,0.4);*/
+}
+.article img{
+	width: 100%;
+}
+.article .childText{
+	display: none;
 }
 /*--------------------------------------------------------------
 ## Asides
