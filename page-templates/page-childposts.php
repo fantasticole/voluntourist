@@ -59,7 +59,7 @@ get_header(); ?>
 					<?php for ($num = 0; $num < count($childPosts[$index]); $num+=4){
 							echo '<div class="article">';
 							echo $childPosts[$index][$num];
-							echo '<a href="'.$arr[$num+1].'"><h4>'.$childPosts[$index][$num+2].'</h4></a>';
+							echo '<a href="'.$childPosts[$index][$num+1].'"><h4>'.$childPosts[$index][$num+2].'</h4></a>';
 							echo '<p class="childText">';
 							echo $childPosts[$index][$num+3];
 							echo '</p></div>';
