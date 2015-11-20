@@ -47,12 +47,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /* COLORS: */
 /* #667E98 - old slate grey/blue */
 /* #0A0A0A - black */
-/* #001242 - deep blue (36, 66, 146) */
 /* #9C9C9C - light grey */
 /* #757575 - dark grey */
 /* #FFA500 - orange */
 /* #FFC459 - light orange (255, 196, 89) */
-/* #244292 - new navy (0, 18, 66) */
+/* #244292 - navy (0, 18, 66) */
 /* #86B340 - green */
 
 
@@ -541,11 +540,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #001242;
+	color: #254293;
 }
 
 a:visited {
-	color: #001242;
+	color: #254293;
 }
 
 a:hover,
@@ -911,7 +910,7 @@ a:active {
 		margin-top: 20px;
 		font-size: 3.5vw;
 		margin-bottom: 15px;
-		text-shadow: 2px 2px 0px #001242;
+		text-shadow: 2px 2px 0px #254293;
 	}
 	#list article .articleTitle .entry-title:hover{
 		text-decoration: underline;
@@ -919,7 +918,7 @@ a:active {
 	#list article .post-edit-link{
 	    margin-left: calc(50% - 17px);
 	    background-color: #FFA500;
-		box-shadow: 2px 2px 0px #001242;
+		box-shadow: 2px 2px 0px #254293;
 	    padding: 3px 5px;
 	}
 	#list article .post-edit-link:hover{
@@ -998,7 +997,7 @@ a:active {
 	}
 	/* Footer */
 	#footer .social{
-		width: 60vw;
+		width: 55vw;
 	}
 	#footer .copyright{
 		width: 40vw;
@@ -1068,6 +1067,7 @@ a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+	margin-top: 10px;
 }
 
 .comment-navigation .nav-next,
@@ -1075,6 +1075,7 @@ a:active {
 .post-navigation .nav-next {
 	float: left;
 	width: 50%;
+	margin-top: 10px;
 }
 /* Sidebar */
 #secondary{
@@ -1088,6 +1089,7 @@ a:active {
 	width: 70vw;
 }
 .widget_meta ul{
+    overflow: hidden;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1120,7 +1122,7 @@ a:active {
 	}
 	.site-footer .social{
 		padding: 5px 0 0 5px;
-		width: 40vw;
+		width: 36vw;
 		float: left;
 		text-align: left;
 	}
@@ -1272,7 +1274,7 @@ body:not(.page-id-12) #main{
 		font-family: 'Stardos Stencil', cursive;
 		text-decoration: none;
 		padding: 3px 5px;
-		border: 5px double #001242;
+		border: 5px double #254293;
 	}
 	.site-description{
 		text-align: center;
@@ -1539,7 +1541,7 @@ article .entry-title {
 	margin: 0;
 	width: 33.3vw;
 	margin-top:12vw;
-	text-shadow: 2px 2px 0px #001242;
+	text-shadow: 2px 2px 0px #254293;
 	font-size: 4vw;
 	position: absolute;
 	font-family: 'Belleza', sans-serif;
@@ -1580,9 +1582,48 @@ article .entry-title {
 	width: 60vw;
 	height: 34vw;
 }
-#comments{
+#comments {
 	width: 70vw;
 	margin: auto;
+}
+#comments textarea {
+	height: 100px;
+}
+#comments .comment-list {
+	margin-left: 0;
+	padding-left: 0;
+}
+#comments .bypostauthor > article:first-child .comment-author {
+	background-color: rgba(255, 165, 0, 0.1);
+	border-radius: 0 5px 5px 0;
+	margin-left: -10px;
+}
+#comments .comment-author {
+	font-size: 18px;
+}
+#comments .comment-author * {
+	vertical-align: bottom;
+}
+#comments article {
+	padding: 0 10px;
+	margin-top: 0;
+}
+#comments .reply {
+	margin-bottom: 3px;
+}
+#comments .children {
+	border-left: 1.5em solid rgba(255, 165, 0, 1);
+	margin-left: 0;
+	padding-left: 0;
+}
+#comments .children .children {
+	border-left: 1.5em solid rgba(255, 165, 0, 0.75);
+}
+#comments .children .children .children {
+	border-left: 1.5em solid rgba(255, 165, 0, 0.5);
+}
+#comments .children .children .children .children {
+	border-left: 1.5em solid rgba(255, 165, 0, 0.2);
 }
 
 .pagination{
@@ -1794,7 +1835,7 @@ body:not(.page-id-12) .entry-content figure {
 		font-size: 28px;
 	}
 	#main #childPage.about{
-		padding: 0 5vw;
+		padding: 0 2vw;
 	}
 	#page .alignleft{
 		margin-right: 0;
@@ -1809,14 +1850,17 @@ body:not(.page-id-12) .entry-content figure {
 	body:not(.page-id-2) #childContent #childPage > p,
 	#childContent .article {
 	    width: 90vw;
-	    margin-left: calc(5vw - 10px);
+	    margin-left: 0;
 	}
 	.widget_search .search-field{
 		min-height: 24px;
 		border-radius: 3px;
 	}
-	#comments {
+	#comments  {
 	    width: 90vw;
+	}
+	#pageText {
+	    width: 85vw;
 	}
 }
 
