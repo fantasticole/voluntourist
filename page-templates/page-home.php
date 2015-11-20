@@ -26,12 +26,24 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<!-- IDs: -->
+			<!-- Articles 13 -->
+			<!-- Celebrities Give Back 6 -->
+			<!-- Get Inspired 7 -->
+			<!-- Media 2 -->
+			<!-- Must See 8 -->
+			<!-- News 9 -->
+			<!-- Reviews 10 -->
+			<!-- Special Features 11 -->
+			<!-- Travel 3 -->
+			<!-- Travel Tips 4 -->
+
 			<div id="features">
 
 			<!-- Get categories -->
 			<?php
 				$args = array(
-				'child_of'           => 12,
+				'child_of'           => 3,
 				'title_li'           => __( '' ),
 			    );
 			    $first = get_categories( $args );

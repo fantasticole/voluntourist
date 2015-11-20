@@ -853,9 +853,6 @@ a:active {
 	#features .feature figure {
 		margin-left: 0px;
 	}
-	#features .feature+.feature:before {
-		display: none;
-	}
 	/* Volunteer Child Page Nav Links */
 	.page-item-12 .children{
 		height: 28px;
@@ -1083,7 +1080,7 @@ a:active {
 		float: right;
 	}
 }
-@media screen and (min-width: 1180px) {
+@media screen and (min-width: 1280px) {
 	#list article,
 	#main #features .feature {
 		width: 31.5vw;
@@ -1387,18 +1384,6 @@ body:not(.page-id-12) #main .entry-content img {
 	width: 90vw;
 	margin-left: calc(5vw - 10px);
 	display: block;
-}
-/* Line between features in a list */
-.feature+.feature:before {
-	content:"";
-	background: rgba(0,0,0,0.7);
-	display: block;
-	height: 1px;
-	width: 70vw;
-	margin: 0 auto;
-	margin-bottom: 10px;
-}
-.feature{
 	padding-bottom: 20px;
 	position: relative;
 }
@@ -1419,7 +1404,7 @@ body:not(.page-id-12) #main .entry-content img {
 	width: 90vw;
 }
 .feature figure {
-	width: 100vw;
+	width: 100% !important;
 	margin-left: -5vw;
 }
 .feature figure img{
