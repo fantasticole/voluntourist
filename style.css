@@ -1144,6 +1144,14 @@ a:active {
 .widget_search .search-field{
 	width: 70vw;
 }
+body.page-id-7 .widget_facebook_likebox,
+body:not(.page-id-7) #secondary .widget_categories {
+    display: inline-block;
+}
+body:not(.page-id-7) .widget_facebook_likebox,
+body.page-id-7 #secondary .widget_categories {
+	display: none;
+}
 .widget_meta ul{
     overflow: hidden;
 	margin: 0;
