@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-content">
+	<div class="entry-content list">
 		<div class="articleTitle">
 			<a href="<?php echo get_permalink(); ?>">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
