@@ -607,7 +607,8 @@ a:active {
 	text-align: center;
 	flex: 1;
 	height: 35px;
-	font-size: 22px;
+	font-size: 18px;
+	padding-top: 5px;
 }
 
 .main-navigation a {
@@ -1048,18 +1049,40 @@ a:active {
 	}
 }
 @media screen and (min-width: 930px) {
-	#childPage .article {
-		width: 32vw;
-		display: inline-block;
-		float: left;
-		margin-left: 0;
-		margin-bottom: 0;
+	.main-navigation .nav-menu > li {
+		font-size: 22px;
+		padding-top: 0;
 	}
-	#childPage .article + .article {
-		margin-left: calc(2vw - 11px);
+	#childPage .article {
+		width: 75vw;
+		display: block;
+		float: left;
+		margin-left: calc(12.5vw - 10px);
+		margin-bottom: 0;
+		position: relative;
+		height: 170px;
+	}
+	#childPage .article img {
+		position: absolute;
+		left: 0;
+		float: left;
+		width: 200px;
+		height: auto;
+		display: inline-block;
+	}
+	#childPage .article .text {
+		display: inline-block;
+		margin-left: 215px;
+		width: calc(75vw - 215px);
+		text-align: left;
+	}
+	#childPage .article .text h4,
+	#childPage .article .text h5 {
+		margin: 0;
 	}
 	#childPage .article .childText{
 		display: block;
+		margin-top: 0;
 	}
 	.single #main .entry-content figure.alignright {
 		margin-left: 20px;
@@ -1078,6 +1101,13 @@ a:active {
 	#main #country article.page .entry-content img {
 		padding-left: 20px;
 		float: right;
+	}
+	#childPage .article{
+		width: 800px;
+		margin-left: calc(50vw - 410px);
+	}
+	#childPage .article .text{
+		width: 575px;
 	}
 }
 @media screen and (min-width: 1280px) {
@@ -1961,14 +1991,11 @@ body:not(.page-id-12) .entry-content figure {
 	.page-id-12 #post-12 figcaption{
 		margin-top: 12vw;
 	}
-	#childContent .article{
-		background-color: rgba(0, 18, 66,0.05);
-	}
 	body:not(.page-id-2) #childContent #childPage h2,
 	body:not(.page-id-2) #childContent #childPage > p,
 	#childContent .article {
 	    width: 90vw;
-	    margin-left: 0;
+	    margin-left: calc(5vw - 10px);
 	}
 	.widget_search .search-field{
 		min-height: 24px;

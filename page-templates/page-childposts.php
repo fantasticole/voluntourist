@@ -38,8 +38,11 @@ get_header(); ?>
 					$thumb = get_the_post_thumbnail();
 					$permalink = get_permalink();
 					$title = get_the_title();
+					$authLink = get_the_author_link();
+					$author = get_the_author();
+					$date = get_the_date();
 					$excerpt = get_the_excerpt();
-					array_push($posts,$thumb,$permalink,$title,$excerpt);
+					array_push($posts,$thumb,$permalink,$title,$authLink,$author,$date,$excerpt);
 					?>
 					<?php endwhile; ?><?php endif; ?>
 					<?php array_push($childPosts,$posts); ?>
@@ -56,13 +59,19 @@ get_header(); ?>
 					<p>
 						<?php echo get_the_excerpt($child); ?>
 					</p>
-					<?php for ($num = 0; $num < count($childPosts[$index]); $num+=4){
+					<?php for ($num = 0; $num < count($childPosts[$index]); $num+=7){
 							echo '<div class="article">';
+							// Thumbnail
 							echo $childPosts[$index][$num];
-							echo '<a href="'.$childPosts[$index][$num+1].'"><h4>'.$childPosts[$index][$num+2].'</h4></a>';
+							// Link and name
+							echo '<div class="text"><a href="'.$childPosts[$index][$num+1].'"><h4>'.$childPosts[$index][$num+2].'</h4></a>';
+							// Author and date
+							$url = get_site_url();
+							echo  '<h5>by <a href="'.$url.'/author/'. $childPosts[$index][$num+3].'">'.$childPosts[$index][$num+4].'</a> on '. $childPosts[$index][$num+5].'</h5>';
 							echo '<p class="childText">';
-							echo $childPosts[$index][$num+3];
-							echo '</p></div>';
+							// Excerpt
+							echo $childPosts[$index][$num+6];
+							echo '</p></div></div>';
 					} ?>
 				</div>
 				<?php endforeach; ?>
