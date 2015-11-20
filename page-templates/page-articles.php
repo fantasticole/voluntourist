@@ -24,19 +24,7 @@ get_header(); ?>
 					echo $content_home;
 				?>
 			</div>
-			<!-- <br> -->
-			<!-- <br> -->
-			<!-- Show Child Categories -->
-			<?php
-				// $args = array('parent' => 'media');
-				// $categories = get_categories( $args );
-				// echo $categories
-			    if (is_category()) {
-			    $this_category = get_category($cat);
-			    echo $this_category;
-			    }
-			?>
-			<!-- <br> -->
+
 			<div id="list">
 
 			<!-- Only show posts in Media Sub-Categories -->
