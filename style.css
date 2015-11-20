@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /* COLORS: */
 /* #667E98 - old slate grey/blue */
+/* #39549C - new blue (36, 66, 146) */
 /* #0A0A0A - black */
 /* #9C9C9C - light grey */
 /* #757575 - dark grey */
@@ -63,6 +64,12 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 	height: 100%;
+}
+html * {
+	-ms-overflow-style: none;
+}
+html *::-webkit-scrollbar {
+	display: none !important;
 }
 
 body {
@@ -797,6 +804,7 @@ a:active {
 	.main-navigation ul {
 		display: flex;
 		flex-direction: row;
+		overflow: hidden;
 	}
 	.nav-menu{
 		background-color: transparent;
@@ -811,6 +819,42 @@ a:active {
 	}
 	.main-navigation ul ul li:hover a{
 		color:rgba(36, 66, 146, 0.9);
+	}
+	/* Home Page */
+	#features .feature {
+		width: 47vw;
+		margin: 0;
+		margin-left: 1vw;
+		border: 1px solid black;
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 15px;
+		padding: 10px;
+	}
+	#features .feature h3 {
+		font-size: 25px;
+	}
+	#features .feature .title{
+		font-size: 20px;
+	}
+	#features .feature figure,
+	#features .feature figcaption,
+	#features .feature img,
+	#features .feature h3 {
+		width: 47vw;
+	}
+	#features .feature > div {
+		width: 100%;
+	}
+	#features .feature img,
+	#features .feature h3 {
+		margin-left: -10px;
+	}
+	#features .feature figure {
+		margin-left: 0px;
+	}
+	#features .feature+.feature:before {
+		display: none;
 	}
 	/* Volunteer Child Page Nav Links */
 	.page-item-12 .children{
@@ -1039,17 +1083,29 @@ a:active {
 		float: right;
 	}
 }
-@media screen and (min-width: 1280px) {
-	#list article {
-		width: 31vw;
+@media screen and (min-width: 1180px) {
+	#list article,
+	#main #features .feature {
+		width: 31.5vw;
 	}
 	#main #list article .entry-content img{
-		width: 31vw !important;
+		width: 31.5vw !important;
 	}
-	#list article .entry-title{
+	#main #features .feature figure,
+	#main #features .feature figcaption,
+	#main #features .feature img,
+	#main #features .feature h3 {
+		width: 31.5vw;
+	}
+	#features .feature > div {
+		width: 100%;
+	}
+	#list article .entry-title,
+	#main #features .feature h3{
 		font-size: 2.8vw;
 	}
-	#list article .articleTitle .entry-title{
+	#list article .articleTitle .entry-title,
+	#main #features .feature .title{
 		font-size: 2vw;
 	}
 }
@@ -1261,7 +1317,9 @@ body:not(.page-id-12) #main{
 .site-branding{
 	margin-top: 40px;
 	width: 100vw;
-	height: calc(56.25vw + );
+	background-color: rgba(36, 66, 146, 0.15);
+	box-shadow: 1px 1px 5px #000;
+	padding-bottom: 10px;
 }
 	.site-title{
 		text-align: center;
@@ -1283,9 +1341,12 @@ body:not(.page-id-12) #main{
 	}
 
 	/*Image & Video Carousel*/
-	.ls-video-layer iframe{
+	#layerslider_2 {
 		width: 100vw;
 		height: 56.25vw;
+		max-height: 500px;
+		max-width: 889px;
+		box-shadow: 1px 1px 2px #000;
 	}
 
 body:not(.page-id-12) .entry-content{
@@ -1308,9 +1369,66 @@ body:not(.page-id-12) #main .entry-content img {
 ## Posts and pages
 --------------------------------------------------------------*/
 /* Home Page Content */
-#main #post-6{
-	margin-top: 0;
+.page-id-6 #main {
+	margin-top: 10px;
 }
+#features {
+	width: 100%;
+}
+.feature {
+	width: 90vw;
+	margin-left: calc(5vw - 10px);
+	display: block;
+}
+/* Line between features in a list */
+.feature+.feature:before {
+	content:"";
+	background: rgba(0,0,0,0.7);
+	display: block;
+	height: 1px;
+	width: 70vw;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.feature{
+	padding-bottom: 20px;
+	position: relative;
+}
+.feature h3 {
+	font-size: 5vw;
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	background-color: #757575;
+	color: #fff;
+}
+.feature .title{
+	font-size: 4vw;
+	text-align: center;
+	width: 100%;
+}
+.feature > div {
+	width: 90vw;
+}
+.feature figure {
+	width: 100vw;
+	margin-left: -5vw;
+}
+.feature figure img{
+	margin-left: 0;
+}
+.feature figcaption {
+	width: 100vw;
+}
+.feature img {
+	width: 100vw;
+	margin-left: -5vw;
+}
+.feature .more-link {
+	display: block;
+	margin-top: 10px;
+}
+
 /* Review Submission Link */
 #review{
 	margin-top: 45px;
