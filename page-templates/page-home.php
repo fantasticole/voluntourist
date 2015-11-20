@@ -60,9 +60,9 @@ get_header(); ?>
 			<!-- Get content -->
 			<?php foreach ($categories as $cat) {
 				$name = $cat->name;
-				echo '<div class="feature">';
-				echo '<h3>'.$name.'</h3><h4 class="title">';
 				$slug = $cat->slug;
+				echo '<div class="feature">';
+				echo '<a href="http://www.iamthevoluntourist.com/category/'.$slug.'"><h3>'.$name.'</h3></a><h4 class="title">';
 				$args = array(
 					'category_name' => $slug,
 					'posts_per_page' => 1

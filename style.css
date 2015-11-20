@@ -825,7 +825,7 @@ a:active {
 		width: 47vw;
 		margin: 0;
 		margin-left: 1vw;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		display: inline-block;
 		vertical-align: top;
 		margin-top: 15px;
@@ -1390,10 +1390,17 @@ body:not(.page-id-12) #main .entry-content img {
 .feature h3 {
 	font-size: 5vw;
 	text-align: center;
-	width: 100%;
+	width: 100vw;
 	margin: 0;
-	background-color: #757575;
+	margin-left: -5vw;
+	background-color: #39549C;
 	color: #fff;
+}
+.feature:hover h3{
+	background-color: #FFA500;
+}
+.feature:hover {
+	box-shadow: 1px 1px 3px #000;
 }
 .feature .title{
 	font-size: 4vw;
