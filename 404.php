@@ -22,32 +22,45 @@ get_header(); ?>
 
 					<?php get_search_form(); ?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+			<div id="features">
 
-					<?php if ( voluntourist_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'voluntourist' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
+			<!-- Get categories -->
+			<?php
+				$args = array(
+				'child_of'           => 3,
+				'title_li'           => __( '' ),
+			    );
+			    $first = get_categories( $args );
+			?>
+			<?php
+				$args = array(
+				'child_of'           => 13,
+				'title_li'           => __( '' ),
+			    );
+			    $second = get_categories( $args );
+				$categories = array_merge($first, $second);
+			?>
 
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'voluntourist' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
+			<!-- Get content -->
+			<?php foreach ($categories as $cat) {
+				$name = $cat->name;
+				$slug = $cat->slug;
+				echo '<div class="feature">';
+				echo '<a href="http://www.iamthevoluntourist.com/category/'.$slug.'"><h3>'.$name.'</h3></a><h4 class="title">';
+				$args = array(
+					'category_name' => $slug,
+					'posts_per_page' => 1
+				);
+				query_posts( $args );
+				while ( have_posts() ) : the_post();
+					echo the_title();
+					echo '</h4>';
+					echo the_content('read more');
+				endwhile;
+				echo '</div>';
+			} ?>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+			</div>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->

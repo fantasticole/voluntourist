@@ -466,7 +466,7 @@ input[type="submit"] {
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .4em 1em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -1869,6 +1869,14 @@ body:not(.page-id-2) #childPage > p,
 }
 .article .childText{
 	display: none;
+}
+/* 404 Page */
+.not-found {
+	text-align: center;
+}
+.not-found .page-content .search-field {
+	width: 45vw;
+	max-width: 800px;
 }
 /*--------------------------------------------------------------
 ## Asides
