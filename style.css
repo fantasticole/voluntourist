@@ -1009,10 +1009,15 @@ a:active {
 	}
 	/* Sidebar */
 	#secondary .widget_meta{
-		width: 30vw;
 	    position: absolute;
 	    bottom: 90px;
 	    left: calc(8vw - 10px);
+	}
+	#secondary .widget_meta{
+		width: 35vw;
+	}
+	body:not(.page-id-7) #secondary .widget_meta{
+		width: 25vw;
 	}
 	body:not(.page-id-7) #secondary .widget_meta{
 	    bottom: 45px;
@@ -1139,8 +1144,7 @@ a:active {
 	#post-18 form,
 	#main .contact-form input[type=email],
 	#main .contact-form input[type=text],
-	#main .contact-form textarea,
-	#page #childPage:after {
+	#main .contact-form textarea {
 		width: 800px;
 	}
 	.single #main .entry-content figure {
@@ -1827,13 +1831,12 @@ article .entry-title {
 	list-style: none;
 	text-align: center;
 }
-#childPage:after {
+#childPage+#childPage:before {
 	content:"";
 	background: rgba(0,0,0,0.2);
 	display: block;
 	height: 1px;
-	width: 75vw;
-	margin: 0 auto;
+	width: 100%;
 }
 #childPage + #childPage{
 	margin-top: 10px;
@@ -2029,7 +2032,10 @@ body:not(.page-id-12) .entry-content figure {
 		margin-top: 12vw;
 	}
 	body:not(.page-id-2) #childContent #childPage h2,
-	body:not(.page-id-2) #childContent #childPage > p,
+	body:not(.page-id-2) #childContent #childPage > p {
+	    width: 90vw;
+	    margin-left: 0;
+	}
 	#childContent .article {
 	    width: 90vw;
 	    margin-left: calc(5vw - 10px);
