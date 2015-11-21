@@ -61,19 +61,21 @@ get_header(); ?>
 			<?php foreach ($categories as $cat) {
 				$name = $cat->name;
 				$slug = $cat->slug;
-				echo '<div class="feature">';
-				echo '<a href="http://www.iamthevoluntourist.com/category/'.$slug.'"><h3>'.$name.'</h3></a><h4 class="title">';
 				$args = array(
 					'category_name' => $slug,
 					'posts_per_page' => 1
 				);
 				query_posts( $args );
 				while ( have_posts() ) : the_post();
-					echo the_title();
-					echo '</h4>';
-					echo the_content('read more');
+					$link = get_the_permalink();
+					$title = get_the_title();
+					echo '<div class="feature">';
+					echo '<a href="http://www.iamthevoluntourist.com/category/'.$slug.'"><h3>'.$name.'</h3></a><div class="content">';
+					echo get_the_post_thumbnail();
+					echo '<h4 class="title"><a href="'.$link.'">'.$title.'</a></h4>';
+					echo the_excerpt('read more');
 				endwhile;
-				echo '</div>';
+				echo '</div></div>';
 			} ?>
 
 			</div>

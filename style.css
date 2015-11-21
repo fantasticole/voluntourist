@@ -824,36 +824,44 @@ a:active {
 	}
 	/* Home Page */
 	#features .feature {
-		width: 47vw;
-		margin: 0;
-		margin-left: 1vw;
-		/*border: 1px solid black;*/
-		display: inline-block;
-		vertical-align: top;
-		margin-top: 15px;
-		padding: 10px;
+		width: 90vw;
+		left: calc(5vw - 10px);
+		position: relative;
+		margin-left: 0;
+		margin-top: 20px;
 	}
 	#features .feature h3 {
-		font-size: 25px;
-	}
-	#features .feature .title{
-		font-size: 20px;
-	}
-	#features .feature figure,
-	#features .feature figcaption,
-	#features .feature img,
-	#features .feature h3 {
-		width: 47vw;
-	}
-	#features .feature > div {
+		font-size: 22px;
 		width: 100%;
+		max-width: 1000px;
+		margin-left: 0;
+		margin: auto;
+		box-shadow: 1px 1px 2px #000;
 	}
-	#features .feature img,
-	#features .feature h3 {
-		margin-left: -10px;
+	#features .feature img {
+		float: left;
+		width: 25vw;
+		max-width: 250px;
+		margin-left: 0;
+		margin-right: 10px;
+		display: inline;
+		box-shadow: 0.5px 0.5px 2px #000;
 	}
-	#features .feature figure {
-		margin-left: 0px;
+	#features .feature h4 {
+		font-size: 20px;
+		margin: 0;
+		width: auto;
+		display: inline;
+	}
+	#features .feature .content {
+		width: 80vw;
+		max-width: 800px;
+		padding-top: 15px;
+		margin: auto;
+		min-height: 185px;
+	}
+	#features .feature .content p {
+		margin: 0;
 	}
 	/* Volunteer Child Page Nav Links */
 	.page-item-12 .children{
@@ -905,6 +913,33 @@ a:active {
 	#main #post-27 img.alignright{
 		float: right;
 		margin-left: 1.5em;
+	}
+	#childPage .article {
+		width: 75vw;
+		display: block;
+		float: left;
+		margin-left: calc(12.5vw - 10px);
+		margin-bottom: 0;
+		position: relative;
+		height: 170px;
+	}
+	#childPage .article img {
+		position: absolute;
+		left: 0;
+		float: left;
+		width: 200px;
+		height: auto;
+		display: inline-block;
+	}
+	#childPage .article .text {
+		display: inline-block;
+		margin-left: 215px;
+		width: calc(75vw - 215px);
+		text-align: left;
+	}
+	#childPage .article .text h4,
+	#childPage .article .text h5 {
+		margin: 0;
 	}
 	/* Format Posts in List */
 	#list article {
@@ -1054,41 +1089,37 @@ a:active {
 		display: inherit;
 	}
 }
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 800px) {
 	.main-navigation .nav-menu > li {
 		font-size: 22px;
 		padding-top: 0;
 	}
-	#childPage .article {
-		width: 75vw;
-		display: block;
-		float: left;
-		margin-left: calc(12.5vw - 10px);
-		margin-bottom: 0;
-		position: relative;
-		height: 170px;
-	}
-	#childPage .article img {
-		position: absolute;
-		left: 0;
-		float: left;
-		width: 200px;
-		height: auto;
-		display: inline-block;
-	}
-	#childPage .article .text {
-		display: inline-block;
-		margin-left: 215px;
-		width: calc(75vw - 215px);
-		text-align: left;
-	}
-	#childPage .article .text h4,
-	#childPage .article .text h5 {
-		margin: 0;
-	}
 	#childPage .article .childText{
+		font-size: 14px;
 		display: block;
 		margin-top: 0;
+	}
+	#childPage .article {
+		height: 190px;
+	}
+}
+@media screen and (min-width: 1100px) {
+	#main #country article.page .entry-content img {
+		padding-left: 20px;
+		float: right;
+	}
+	#childPage .article{
+		width: 800px;
+		margin-left: calc(50vw - 410px);
+		height: 170px;
+	}
+	#childPage .article .text{
+		width: 575px;
+	}
+	#childPage .article .childText,
+	#childPage .article .text h4,
+	#childPage .article .text h5 {
+		font-size: 14px;
 	}
 	.single #main .entry-content figure.alignright {
 		margin-left: 20px;
@@ -1103,42 +1134,17 @@ a:active {
 		margin-left: 0;
 	}
 }
-@media screen and (min-width: 1100px) {
-	#main #country article.page .entry-content img {
-		padding-left: 20px;
-		float: right;
-	}
-	#childPage .article{
-		width: 800px;
-		margin-left: calc(50vw - 410px);
-	}
-	#childPage .article .text{
-		width: 575px;
-	}
-}
 @media screen and (min-width: 1280px) {
-	#list article,
-	#main #features .feature {
+	#list article {
 		width: 31.5vw;
 	}
 	#main #list article .entry-content img{
 		width: 31.5vw !important;
 	}
-	#main #features .feature figure,
-	#main #features .feature figcaption,
-	#main #features .feature img,
-	#main #features .feature h3 {
-		width: 31.5vw;
-	}
-	#features .feature > div {
-		width: 100%;
-	}
-	#list article .entry-title,
-	#main #features .feature h3{
+	#list article .entry-title {
 		font-size: 2.8vw;
 	}
-	#list article .articleTitle .entry-title,
-	#main #features .feature .title{
+	#list article .articleTitle .entry-title {
 		font-size: 2vw;
 	}
 	#post-18 form,
@@ -1204,7 +1210,7 @@ a:active {
 /* Sidebar */
 #secondary{
 	min-height: 200px;
-	margin-top: 15px;
+	margin-top: 40px;
 }
 .page-id-12 #secondary{
 	display: none;
@@ -1393,15 +1399,12 @@ body:not(.page-id-12) #main{
 .site-branding{
 	margin-top: 40px;
 	width: 100vw;
-	background-color: rgba(36, 66, 146, 0.15);
-	box-shadow: 1px 1px 5px #000;
-	padding-bottom: 10px;
 }
 	.site-title{
 		text-align: center;
 		font-size: 30px;
 		position: relative;
-		padding-top: 20px;
+		padding-top: 30px;
 		margin: 0;
 	}
 	.site-title a{
@@ -1467,11 +1470,8 @@ body:not(.page-id-12) #main .entry-content img {
 	background-color: #39549C;
 	color: #fff;
 }
-.feature:hover h3{
+.feature h3:hover{
 	background-color: #FFA500;
-}
-.feature:hover {
-	box-shadow: 1px 1px 3px #000;
 }
 .feature .title{
 	font-size: 4vw;
@@ -1767,7 +1767,7 @@ article .entry-title {
 }
 
 .entry-content iframe {
-	margin-left: 15vw;
+	margin-left: 5vw;
 	width: 60vw;
 	height: 34vw;
 }
@@ -1836,7 +1836,8 @@ article .entry-title {
 	background: rgba(0,0,0,0.2);
 	display: block;
 	height: 1px;
-	width: 100%;
+	width: 80%;
+	margin-left: 10%;
 }
 #childPage + #childPage{
 	margin-top: 10px;
@@ -1844,8 +1845,6 @@ article .entry-title {
 #childPage .article:last-child{
 	margin-bottom: 15px;
 }
-body:not(.page-id-2) #childPage h2,
-body:not(.page-id-2) #childPage > p,
 .article {
 	width: 70vw;
 	margin-left: calc(15vw - 10px);
@@ -1861,8 +1860,6 @@ body:not(.page-id-2) #childPage > p,
 	float: none;
 	margin-top: 15px;
 	padding: 5px;
-	/*background-color: rgba(0, 18, 66,0.05);*/
-	/*box-shadow: 1px 1px 5px rgba(0, 18, 66,0.4);*/
 }
 .article img{
 	width: 100%;
@@ -2057,6 +2054,14 @@ body:not(.page-id-12) .entry-content figure {
 	}
 	#pageText {
 	    width: 85vw;
+	}
+	#post-18 form{
+		margin: 0;
+	}
+	#main .contact-form input[type=email],
+	#main .contact-form input[type=text],
+	#main .contact-form textarea{
+		min-width: 85vw;
 	}
 }
 
