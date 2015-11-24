@@ -867,6 +867,9 @@ a:active {
 	.page-item-12 .children{
 		height: 28px;
 	}
+	.page-id-12 #post-12 figcaption{
+		text-shadow: 2px 2px #254293;
+	}
 	.single .site-main article,
 	.child article{
 		margin-top: 40px;
@@ -1514,13 +1517,18 @@ body:not(.page-id-12) #main .entry-content img {
 	padding: 5px 60px;
     border-radius: 2px;
 	border: 1px solid rgba(255, 165, 0, 0.65);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 15px 17px rgba(255, 255, 255, 0.4), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 #review a:hover {
+	color: #fff;
 	background-color: #39549C;
 	border-color: rgba(57, 84, 156, 0.65);
 	text-shadow: 0 1px 0 #244292;
+}
+#review a:active,
+#review a:focus {
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4), inset 0 -11px 17px rgba(255, 255, 255, 0.4), inset 0 5px 12px rgba(0, 0, 0, 0.05);
 }
 
 #pageText{
@@ -1743,7 +1751,7 @@ article .entry-title {
 	margin: 0;
 	width: 33.3vw;
 	margin-top:12vw;
-	text-shadow: 2px 2px 0px #254293;
+	text-shadow: 1px 1px #254293;
 	font-size: 4vw;
 	position: absolute;
 	font-family: 'Belleza', sans-serif;
@@ -1772,7 +1780,8 @@ article .entry-title {
 .page-id-12 #main figure figcaption a,
 .page-id-12 #main figure figcaption a:visited,
 .page-id-12 #main figure figcaption a:hover{
-	color: #FFA500;
+	color: #FFF;
+	font-weight: bold;
 }
 /* Volunteer White Space */
 #post-12{
