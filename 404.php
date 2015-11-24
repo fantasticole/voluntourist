@@ -49,6 +49,7 @@ get_header(); ?>
 				echo '<a href="http://www.iamthevoluntourist.com/category/'.$slug.'"><h3>'.$name.'</h3></a><h4 class="title">';
 				$args = array(
 					'category_name' => $slug,
+					'tag' => 'featured',
 					'posts_per_page' => 1
 				);
 				query_posts( $args );

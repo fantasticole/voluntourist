@@ -1260,7 +1260,7 @@ body.page-id-7 #secondary .widget_categories {
 	}
 	.site-footer .social{
 		padding: 5px 0 0 5px;
-		width: 36vw;
+		width: 42vw;
 		float: left;
 		text-align: left;
 	}
@@ -1271,7 +1271,7 @@ body.page-id-7 #secondary .widget_categories {
 	.site-footer .copyright{
 		font-size: 20px;
 		padding: 5px 15px 0 0;
-		width: 60vw;
+		width: 55vw;
 		float: right;
 		text-align: right;
 	}
@@ -1428,6 +1428,13 @@ body:not(.page-id-12) #main{
 		box-shadow: 1px 1px 2px #000;
 	}
 
+	#layerslider_2 iframe {
+		width: 100vw;
+		height: 56.25vw;
+		max-height: 500px;
+		max-width: 889px;
+	}
+
 body:not(.page-id-12) .entry-content{
 	padding-left: calc(15vw - 10px);
 	padding-right: calc(15vw - 10px);
@@ -1502,13 +1509,19 @@ body:not(.page-id-12) #main .entry-content img {
 
 /* Review Submission Link */
 #review{
-	margin-top: 45px;
+	margin-top: 55px;
 	margin-bottom: 10px;
-	background-color: rgba(255, 165, 0, 0.65);
 	text-align: center;
 }
-#review a:hover{
-	color: #fff;
+#review a{
+	background-color: rgba(255, 165, 0, 0.65);
+	padding: 5px 30px;
+    border-radius: 2px;
+}
+#review a:hover {
+	background-color: #244292;
+	color: #FFA500;
+	box-shadow: 1px 1px 1px #000;
 }
 
 #pageText{
@@ -1692,6 +1705,7 @@ article .entry-title {
 	display: block;
 	margin-top: 15px;
 }
+.tags-links,
 .edit-link {
 	display: block;
 	margin: 15px 0

@@ -63,6 +63,7 @@ get_header(); ?>
 				$slug = $cat->slug;
 				$args = array(
 					'category_name' => $slug,
+					'tag' => 'featured',
 					'posts_per_page' => 1
 				);
 				query_posts( $args );
