@@ -867,9 +867,6 @@ a:active {
 	.page-item-12 .children{
 		height: 28px;
 	}
-	.site-content #review{
-		margin-top: 60px;
-	}
 	.single .site-main article,
 	.child article{
 		margin-top: 40px;
@@ -1390,7 +1387,7 @@ body.page-id-7 #secondary .widget_categories {
 # Content
 --------------------------------------------------------------*/
 /* Not On Reviews Page */
-body:not(.page-id-149) #main{
+#main{
 	margin-top: 40px;
 }
 body:not(.page-id-12) #main{
@@ -1508,27 +1505,29 @@ body:not(.page-id-12) #main .entry-content img {
 }
 
 /* Review Submission Link */
-#review{
-	margin-top: 55px;
-	margin-bottom: 10px;
+#review {
+	margin: 30px;
 	text-align: center;
 }
 #review a{
 	background-color: rgba(255, 165, 0, 0.65);
-	padding: 5px 30px;
+	padding: 5px 60px;
     border-radius: 2px;
+	border: 1px solid rgba(255, 165, 0, 0.65);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 #review a:hover {
-	background-color: #244292;
-	color: #FFA500;
-	box-shadow: 1px 1px 1px #000;
+	background-color: #39549C;
+	border-color: rgba(57, 84, 156, 0.65);
+	text-shadow: 0 1px 0 #244292;
 }
 
 #pageText{
 	width: 70vw;
 	margin: auto;
 }
-body:not(.page-id-149) #pageText{
+#pageText{
 	margin-top: 40px;
 }
 /* iframe styling (e.g. videos) */

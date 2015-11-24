@@ -13,9 +13,6 @@
 
 get_header(); ?>
 
-	<div id="review">
-		<a href="./submit-a-review/">SUBMIT A REVIEW</a>
-	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main child" role="main">
 			<!-- Display Page Content -->
@@ -26,6 +23,9 @@ get_header(); ?>
 					$content_home = $post['post_content'];
 					echo $content_home;
 				?>
+			</div>
+			<div id="review">
+				<a href="./submit-a-review/">SUBMIT A REVIEW</a>
 			</div>
 			<div id="list">
 
